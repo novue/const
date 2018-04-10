@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>短信日志</title>
+	<link rel="stylesheet" href="css/ConST_lb.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<!-- 引入easyui css -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+	
+</head>
+<body>
+	<div class="easyui-panel" style="height: 100%;padding:0 10px;overflow-y:hidden;" data-options="fit:true,border:false,">
+		<header style="background:transparent;height:64px;padding:0 10px;border:0">
+			<div class="menu_top">
+				<ul>
+					<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+					<li><i class="fa fa-angle-right"></i><a href="#">系统管理</a></li>
+					<li><i class="fa fa-angle-right"></i><a href="#"><span>短信日志</span></a></li>
+				</ul>
+			</div>
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#" onclick="$('#dlg').dialog('open')"><i class="fa fa-plus"></i>添加</a></li>
+					<li><a href="#" onclick="$('#dlf').dialog('open')"><i class="fa fa-pencil"></i>修改</a></li>
+					<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+					<li><a href="#" onclick="$('#ch').dialog('open')"><i class="fa fa-search"></i>查询</a></li>
+				</ul>
+			</div>
+		</header>
+		<table id="dg" class="easyui-datagrid" title="" toolbar="#tb" style="width:100%;"
+			data-options="
+				rownumbers:true,
+				singleSelect:false,
+				pagination:true,
+				fit:true,
+				url:'datagrid_data1.json',
+				method:'get'
+				">
+			<thead>
+				<tr>
+					<th field="ck" width="2%" checkbox="true"></th>
+					<th field="单据类型" width="6%" align="left">单据类型</th>
+					<th field="接收人类型" width="8%" align="left">接收人类型</th>
+					<th field="接收人" width="6%" align="left">接收人</th>
+					<th field="接收人电话" width="10%" align="left">接收人电话</th>
+					<th field="短信内容" width="25%" align="left">短信内容</th>
+					<th field="表单编号" width="8%" align="left">表单编号</th>
+					<th field="发送时间" width="18%" align="left">发送时间</th>
+					<th field="发送结果" width="6%" align="left">发送结果</th>
+					<th field="表名" width="10%" align="left">表名</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>维修单据</td>
+					<td>客户</td>
+					<td>张三丰</td>
+					<td>13939393939</td>
+					<td>尊敬的用户您好</td>
+					<td>0709010215</td>
+					<td>2016年5月30日 15：43：12</td>
+					<td>成功</td>
+					<td>售后发货表</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="add_box">
+			<div id="dlg" class="easyui-dialog" title="添加" style="width:800px;height:220px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlg-toolbar',
+						buttons: '#dlg-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">单据类型:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="djlx" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="售后发货单">国内</option>
+									<option value="维修检验单">国外</option>
+									<option value="维修计量单">国内</option>
+									<option value="维修收费单">国外</option>
+								</select>
+	    					</td>
+							<th width="150px">接收人类型:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="jsrlx" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="客户">国内</option>
+									<option value="销售人员">国外</option>
+									<option value="维修计量人员">国内</option>
+									<option value="维修检验人员">国外</option>
+									<option value="维修收费人员">国外</option>
+								</select>
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">接收人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="jsr" data-options="required:true," style="width: 100%;">
+	    					</td>
+							<th width="150px">接收人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="jsrdh" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">短信内容:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dxnr" data-options="required:true," style="width: 100%;">
+	    					</td>
+							<th width="150px">表单编号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="bdbh" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">发送时间:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="fssj" data-options="required:true," style="width: 100%;">
+	    					</td>
+							<th width="150px">发送结果:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="fsjg" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">表名:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="bm" data-options="required:true," style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlg-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlg').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="fix_box">
+			<div id="dlf" class="easyui-dialog" title="修改" style="width:800px;height:220px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlf-toolbar',
+						buttons: '#dlf-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">单据类型:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="维修单据" name="djlx" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">接收人类型:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="客户" name="jsrlx" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">接收人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="张三丰" name="jsr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">接收人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="13939393939" name="jsrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">短信内容:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="尊敬的用户您好" name="dxnr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">表单编号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="0709010215" name="bdbh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">发送时间:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="2016年5月30日 15：43：12" name="fssj" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">发送结果:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="成功" name="fsjg" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">表名:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="售后发货表" name="bm" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlf-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlf').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="ch_box">
+			<div id="ch" class="easyui-dialog" title="查询" style="width:800px;height:220px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#ch-toolbar',
+						buttons: '#ch-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">单据类型:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="djlx" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="售后发货单">国内</option>
+									<option value="维修检验单">国外</option>
+									<option value="维修计量单">国内</option>
+									<option value="维修收费单">国外</option>
+								</select>
+	    					</td>
+							<th width="150px">接收人类型:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="jsrlx" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="客户">国内</option>
+									<option value="销售人员">国外</option>
+									<option value="维修计量人员">国内</option>
+									<option value="维修检验人员">国外</option>
+									<option value="维修收费人员">国外</option>
+								</select>
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">接收人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="jsr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">接收人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="jsrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">短信内容:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dxnr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">表单编号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="bdbh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">发送时间:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="fssj" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">发送结果:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="fsjg" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">表名:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="bm" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="ch-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#ch').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- 引入easyui js -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+	<script>
+		$(function(){
+			$("#tb").hide();
+			$(".window").hide();
+			$(".window-shadow").hide();
+			$(".window-mask").hide();
+		})
+	</script>
+</body>
+</html>

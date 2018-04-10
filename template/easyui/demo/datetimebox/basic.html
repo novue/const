@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic DateTimeBox - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Basic DateTimeBox</h2>
+	<p>Click the calendar image on the right side.</p>
+	<div style="margin:20px 0;"></div>
+	<input class="easyui-datetimebox" required style="width:200px"
+		data-options="formatter:formatter,parser:parser"
+	>
+</body>
+<script type="text/javascript">
+		function formatter(date){
+			var y = date.getFullYear();
+			var m = date.getMonth()+1;
+			var d = date.getDate();
+			var h = date.getHours();
+			var min = date.getMinutes();
+			var sec = date.getSeconds();
+			var str = y+'-'+(m<10?('0'+m):m)+'-'+(d<10?('0'+d):d)+' '+' '+(h<10?('0'+h):h)+':'+(min<10?('0'+min):min)+':'+(sec<10?('0'+sec):sec);
+			return str;
+		}
+		function parser(s){
+			if (!s) return new Date();
+			var y = s.substring(0,4);
+			var m =s.substring(5,7);
+			var d = s.substring(8,10);
+			var h = s.substring(11,14);
+			var min = s.substring(15,17);
+			var sec = s.substring(18,20);
+			if (!isNaN(y) && !isNaN(m) && !isNaN(d) && !isNaN(h) && !isNaN(min) && !isNaN(sec)){
+				return new Date(y,m-1,d,h,min,sec);
+			} else {
+				return new Date();
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Basic Form - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../demo.css"> -->
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Basic Form</h2>
+	<p>Fill the form and submit it.</p>
+	<div style="margin:20px 0;"></div>
+	<div class="easyui-panel" title="New Topic" style="width:400px">
+		<div style="padding:10px 60px 20px 60px">
+	    <form id="ff" method="get" action="abc.jsp">
+	    	<table cellpadding="5">
+	    		<tr>
+				
+				
+	    			<td>Name:</td>
+	    			<td><input class="easyui-textbox" type="text" name="name" data-options="required:true"></input>
+						<input class="easyui-datetimebox" required style="width:200px" name="date"/>
+					</td>
+	    		</tr>
+				<input type="submit" value="sumbit" />
+	    	</table>
+			
+	    </form>
+	    <div style="text-align:center;padding:5px">
+	    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="submitForm()">Submit</a>
+	    	<a href="javascript:void(0)" class="easyui-linkbutton" onclick="clearForm()">Clear</a>
+	    </div>
+	    </div>
+	</div>
+	<script>
+		function submitForm(){
+			$('#ff').form('submit');
+		}
+		function clearForm(){
+			$('#ff').form('clear');
+		}
+	</script>
+</body>
+</html>

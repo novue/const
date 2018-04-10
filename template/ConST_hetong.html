@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>康斯特销售合同</title>
+	<link rel="stylesheet" href="css/ConST_biaodan.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+
+<!-- content_table -->
+	<div class="content_table">
+		<div class="tabforyou">
+			<ul>
+				<li><a href="#"><i class="fa fa-file-text"></i>预览</a></li>
+				<li><a href="#"><i class="fa fa-copy"></i>复制</a></li>
+				<li><a href="#"><i class="fa fa-save"></i>保存</a></li>
+				<li><a href="#"><i class="fa fa-user"></i>提交</a></li>
+			</ul>
+		</div>
+		
+<!-- main_table -->
+		<div id="main_table">
+			<h3>康斯特销售合同</h3>
+			<div class="biaotou">
+				<label for="bddh">表单单号：</label><input class="easyui-textbox" id="bddh" name="bddh" data-options="required:false" style="width: 200px;">
+			</div>
+			<form action="" method="post">
+				<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="100%">
+					<tr>
+						<td colspan="8" class="ht_span">购货方信息</td>
+					</tr>
+					<tr>
+						<td>是否中间商</td>
+						<td colspan="3">
+							<input type="radio" name="judge" id="s"><label for="s">是</label>
+							<input type="radio" name="judge" id="f"><label for="f">否</label>
+						</td>
+						<td>是否添加借领单</td>
+						<td colspan="3">
+							<input type="radio" name="judge2" id="sd"><label for="sd">是</label>
+							<input type="radio" name="judge2" id="fd"><label for="fd">否</label>
+						</td>
+					</tr>
+					<tr>
+						<td>合同单位</td>
+						<td colspan="3">
+							<input class="easyui-textbox comboInput" id="htdw" name="htdw" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 80%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+							<a href="#" title="查看历史信息">历史记录</a>
+						</td>
+						<td>地址</td>
+						<td colspan="3"><input class="easyui-textbox" name="dz" data-options="required:false" style="width: 80%;">
+						</td>
+					</tr>
+					<tr>
+						<td>传真</td>
+						<td><input class="easyui-textbox" name="cz" data-options="required:false" style="width: 100%;"></td>
+						<td>邮箱</td>
+						<td><input class="easyui-textbox" name="yx" data-options="required:false" style="width: 100%;"></td>
+						<td>联系电话</td>
+						<td><input class="easyui-textbox" name="lxdh" data-options="required:false" style="width: 100%;"></td>
+						<td>邮政编码</td>
+						<td><input class="easyui-textbox" name="yzbm" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td style="width: 8%">法定代表人</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="fddbr" data-options="required:false" style="width: 100%;"></td>
+						<td style="width: 8%">注册电话</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="zcdh" data-options="required:false" style="width: 100%;"></td>
+						<td style="width: 8%">委托代理人</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="wtdlr" data-options="required:false" style="width: 100%;"></td>
+						<td style="width: 8%">代理人手机</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="dlrsj" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>开户银行</td>
+						<td><input class="easyui-textbox" name="khyh" data-options="required:false" style="width: 100%;"></td>
+						<td>帐号</td>
+						<td><input class="easyui-textbox" name="zh" data-options="required:false" style="width: 100%;"></td>
+						<td>税号</td>
+						<td><input class="easyui-textbox" name="sh" data-options="required:false" style="width: 100%;"></td>	
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td colspan="8" class="ht_span">条款信息</td>
+					</tr>
+					<tr>
+						<td>付款方式</td>
+						<td><input class="easyui-textbox" name="fkfs" data-options="required:false" style="width: 100%;"></td>
+						<td>付款期限</td>
+						<td><input class="easyui-textbox" name="fkqx" data-options="required:false" style="width: 100%;"></td>
+						<td>付款说明</td>
+						<td><input class="easyui-textbox" name="fksm" data-options="required:false" style="width: 100%;"></td>
+						<td>交货时间说明</td>
+						<td><input class="easyui-textbox" name="jhsjsm" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>交货地点</td>
+						<td colspan="3"><input class="easyui-textbox" name="jhdd" data-options="required:false" style="width: 100%;"></td>
+						<td>交货方式</td>
+						<td><input class="easyui-textbox" name="jhfs" data-options="required:false" style="width: 100%;"></td>
+						<td>质保金比例</td>
+						<td><input class="easyui-textbox" name="zbjbl" data-options="required:false" style="width: 100%;"></td>
+						
+					</tr>
+					<tr>
+						<td>质保期</td>
+						<td><input class="easyui-textbox" name="zbq" data-options="required:false" style="width: 100%;"></td>
+						<td>供货周期天数</td>
+						<td><input class="easyui-textbox" name="ghzqts" data-options="required:false" style="width: 100%;"></td>
+						<td>合同有效期</td>
+						<td><input class="easyui-datebox textbox" name="yjwcrq" data-options="required:false" style="width: 45%;">&nbsp;至&nbsp;<input class="easyui-datebox textbox" name="yjwcrq" data-options="required:false" style="width: 38%;"></td>
+						<td>合同一式*份</td>
+						<td><input class="easyui-textbox" name="fksm" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td colspan="8" class="ht_span">收货信息</td>
+					</tr>
+					<tr>
+						<td>收货人</td>
+						<td><input class="easyui-textbox" name="shr" data-options="required:false" style="width: 100%;"></td>
+						<td>收货人联系方式</td>
+						<td><input class="easyui-textbox" name="shrlxfs" data-options="required:false" style="width: 100%;"></td>
+						<td >收货地址</td>
+						<td><input class="easyui-textbox" name="shdz" data-options="required:false" style="width: 100%;"></td>
+						<td>发货要求</td>
+						<td><input class="easyui-textbox" name="fhyq" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td colspan="8" class="ht_span">其它信息</td>
+					</tr>
+					<tr>
+						<td>合计金额</td>
+						<td><input class="easyui-textbox" name="hjje" data-options="required:false" style="width: 100%;"></td>
+						<td>合计金额大写</td>
+						<td><input class="easyui-textbox" name="hjjedx" data-options="required:false" style="width: 100%;"></td>
+						<td>合同发给客户方式</td>
+						<td><input class="easyui-textbox" name="htfgkhfs" data-options="required:false" style="width: 100%;"></td>
+						<td>选择价格方案</td>
+						<td><input class="easyui-textbox" name="xzjgfa" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		<div id="sub_area">
+			<h3><i class="fa fa-table"></i>借领子表单</h3>
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#"><i class="fa fa-plus"></i>增行</a></li>
+					<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+					<li><a href="#"><i class="fa fa-save"></i>暂存</a></li>
+					<li><a href="#"><i class="fa fa-repeat"></i>刷新</a></li>
+					<li><a href="#"><i class="fa fa-search"></i>查询</a></li>
+				</ul>
+			</div>
+			<div id="sub_table">
+				<form action="" method="post">
+					<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="1600px;">
+						<thead>
+							<tr>
+								<th width="40px">序号</th>
+								<th width="30px"><input type="checkbox" data-options="required:false"></th>
+								<th width="180px">单据编号</th>
+								<th width="150px">单位类型</th>
+								<th width="120px">部门</th>
+								<th width="120px">业务员</th>
+								<th width="180px">存货编码</th>
+								<th width="180px">存货名称</th>
+								<th width="90px">主计量单位</th>
+								<th width="90px">数量</th>
+								<th nowrap style="word-wrap:break-word;">备注</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="text" name="xh" data-options="required:false"></td>
+								<td><input type="checkbox" name="ck" style="width: 30px;"></td>
+								<td>
+									<input class="easyui-textbox comboInput" name="djbh" data-options="editable:false,buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 100%">
+								</td>
+								<td>
+									<select class="easyui-combobox" name="dwlx" style="width: 100%;">
+										<option value="qxz">请选择</option>
+										<option value="gyqy">国有企业</option>
+										<option value="gycgqy">国有控股企业 </option>
+										<option value="wzqy">外资企业  </option>
+										<option value="hzqy">合资企业  </option>
+										<option value="myqy">民营企业 </option>
+										<option value="sydw">事业单位 </option>
+										<option value="gjxzjg">国家行政机关 </option>
+									</select>
+								</td>
+								<td>
+									<input class="easyui-textbox comboInput" name="bm" data-options="editable:false,buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 100%">
+								</td>
+								<td>
+									<input class="easyui-textbox comboInput" name="ywy" data-options="editable:false,buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 100%">
+								</td>
+								<td>
+									<input class="easyui-textbox comboInput" name="chbm" data-options="editable:false,buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 100%">
+								<td><input type="text" name="chmc" data-options="required:false"></td>
+								<td><input class="easyui-textbox" name="zjldw" data-options="required:false" style="width: 100%;"></td>
+								<td><input class="easyui-textbox" name="sl" data-options="required:false" style="width: 100%;"></td>
+								<td><input class="easyui-textbox" name="bz" data-options="required:false" style="width: 100%;"></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+<!-- 上传附件 -->
+		<div id="message_area">
+			<h3><i class="fa fa-table"></i>附件信息<span class="span">（单个附件小于4M）</span></h3>
+			<div class="fix_file">
+				<label for="file_2" title="选择上传文件">上传CNAS委托单:</label><input tabindex="2" size="3" name="report" id="file_1" type="file">
+			</div>
+			<div class="fix_file">
+				<label for="file_2" title="选择上传文件">上传送检委托单:</label><input tabindex="2" size="3" name="report" id="file_2" type="file" onchange="document.getElementById('xFile').value=this.value">
+			</div>
+ 		</div>
+ </div>
+</body>
+</html>

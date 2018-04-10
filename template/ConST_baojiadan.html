@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>康斯特报价单</title>
+	<link rel="stylesheet" href="css/ConST_biaodan.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+<!-- menu_top -->
+	<div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#">康斯特CRM</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#">报价单</a></li>
+		</ul>
+	</div>
+
+<!-- content_table -->
+	<div class="content_table">
+		
+		<div class="tabforyou">
+			<ul>
+				<li><a href="#"><i class="fa fa-file-text"></i>预览</a></li>
+				<li><a href="#"><i class="fa fa-copy"></i>复制</a></li>
+				<li><a href="#"><i class="fa fa-save"></i>保存</a></li>
+				<li><a href="#"><i class="fa fa-user"></i>提交</a></li>
+			</ul>
+		</div>
+
+<!-- main_table -->
+		<div id="main_table">
+			<h3>康斯特报价单</h3>
+			<div class="biaotou">
+				<label for="bddh">表单单号：</label><input class="easyui-textbox" id="bddh" name="bddh" data-options="required:false" style="width: 200px;">
+				<label for="bddh">报价日期：</label><input class="easyui-datebox textbox" name="fxrq" data-options="required:false" style="width: 200px;">
+			</div>
+			<form action="" method="post">
+				<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="100%">
+					<tr>
+						<td>客户<span class="span">*</span></td>
+						<td colspan="3">
+							<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 90%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+						</td>
+						<td>收件人<span class="span">*</span></td>
+						<td colspan="1"><input class="easyui-textbox" name="sjr" data-options="required:false" style="width: 100%;">
+						</td>
+					</tr>
+					<tr>
+						<td>是否中间商</td>
+						<td>
+							<form action="">
+								<input type="radio" name="sfxygz" class="sfzjs" id="yes" data-options="required:false"><label for="yes">是</label>
+								<input type="radio" name="sfxygz" class="sfzjs" id="no" data-options="required:false"><label for="no">否</label>
+							</form>
+						</td>
+						<td>最终用户名称<span class="span">*</span></td>
+						<td colspan="3"><input class="easyui-textbox" name="zzyhmc" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td style="width: 12%">客户邮箱</td>
+						<td style="width: 24%">
+							<input class="easyui-textbox" name="khyx" data-options="required:false" style="width: 60%;"><span class="bitian">&nbsp;邮箱、传真至少填写一个!</span>
+						</td>
+						<td style="width: 12%">客户传真</td>
+						<td style="width: 20%"><input class="easyui-textbox" name="khcz" data-options="required:false" style="width: 100%;"></td>
+						<td style="width: 12%">客户电话<span class="span">*</span></td>	
+						<td style="width: 20%"><input class="easyui-textbox" name="khdh" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>供货周期天数</td>
+						<td><input class="easyui-textbox" name="ghzqts" data-options="required:false" style="width: 50%;"><span class="fuzhuwenzi">&nbsp;个工作日  (7至60之间的整数)</span></td>
+						<td>报价有效期</td>
+						<td>
+							<input class="easyui-textbox" name="bjyxq" data-options="required:false" style="width: 30%;"><span class="fuzhuwenzi">&nbsp;个月</span>
+						</td>
+						<td>是否需要盖章</td>
+						<td>
+							<form action="">
+								<input type="radio" name="sfxygz" class="sfxygz" id="s" data-options="required:false"><label for="s">是</label>
+								<input type="radio" name="sfxygz" class="sfxygz" id="f" data-options="required:false"><label for="f">否</label>
+							</form>
+						</td>
+					</tr>
+					<tr>
+						<td >付款方式</td>
+						<td>
+							<select class="easyui-combobox" name="fkfs" style="width: 100%;">
+								<option value="qxz">请选择</option>
+								<option value="kdfh">款到发货</option>
+								<option value="hdfk">货到付款</option>
+								<option value="fqfk">分期付款</option>
+							</select>
+						</td>
+						<td>付款说明</td>
+						<td><input class="easyui-textbox" name="fksm" data-options="required:false" style="width: 100%;"></td>
+						<td>交货时间说明</td>
+						<td><input class="easyui-textbox" name="jhsjsm" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>备注</td>
+						<td colspan="5"><input class="easyui-textbox" name="bz" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>报价方案</td>
+						<td>
+							<ul>
+								<li><a href="#fangan1" data-toggle="tab" class="fanganxz">方案一<span class="span">*</span></a></li>
+								<li><a href="#fangan2" data-toggle="tab">方案二</a></li>
+								<li><a href="#fangan3" data-toggle="tab">方案三</a></li>
+								<li><span class="span">方案一为必选项</span></li>
+							</ul>
+						</td>
+						<td>折扣率</td>
+						<td colspan="3">
+							<input class="easyui-textbox" name="zkl" data-options="required:false" style="width: 10%;"><span class="fuzhuwenzi">&nbsp;%  (1至100之间的整数)</span>
+						</td>
+					</tr>
+					<tr>
+						<td>金额合计</td>
+						<td><input class="easyui-textbox" name="jehj" data-options="required:false" style="width: 100%;"></td>
+						<td>金额合计大写  </td>
+						<td colspan="3"><input class="easyui-textbox" name="wldh" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>优惠价合计</td>
+						<td><input class="easyui-textbox" name="yhjhj" data-options="required:false" style="width: 100%;"></td>
+						<td>优惠价合计大写</td>
+						<td colspan="3"><input class="easyui-textbox" name="yhjhjdx" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>业务员</td>
+						<td>
+							<input class="easyui-textbox comboInput" id="itemNo" name="ywy" data-options="buttonIcon:'icon-find',onClickButton:function(){getBudget()}" style="width: 90%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+						</td>
+						<td >发给客户方式</td>
+						<td colspan="3">
+							<select class="easyui-combobox" name="fkfs" style="width: 50%;">
+								<option value="qxz">请选择</option>
+								<option value="yj">邮件</option>
+								<option value="cz">传真</option>
+								<option value="yj">邮寄</option>
+								<option value="df">单方</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+<!-- fangan  start -->
+		<div id="sub_area">
+			<div class="fangan" id="fangan1">
+				<h3><i class="fa fa-table"></i>方案一</h3>
+				<div class="tabforyou">
+					<ul>
+						<li><a href="#"><i class="fa fa-plus"></i>增行</a></li>
+						<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+						<li><a href="#"><i class="fa fa-save"></i>暂存</a></li>
+						<li><a href="#"><i class="fa fa-repeat"></i>刷新</a></li>
+						<li><a href="#"><i class="fa fa-search"></i>查询</a></li>
+					</ul>
+				</div>
+				<div id="sub_table">
+					<form action="" method="post">
+						<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="2300px;">
+							<thead>
+								<tr>
+									<th width="40px">序号</th>
+									<th width="30px"><input type="checkbox" data-options="required:false"></th>
+									<th width="120px">出厂编号</th>
+									<th width="120px">产品名称</th>
+									<th width="120px">外部型号</th>
+									<th width="120px">型号</th>
+									<th width="120px">规格</th>
+									<th width="180px">精度</th>
+									<th width="90px">折扣率</th>
+									<th width="60px">数量</th>
+									<th width="60px">单位</th>
+									<th width="90px">单价</th>
+									<th width="90px">市场价</th>
+									<th width="90px">价格</th>
+									<th width="90px">优惠价</th>
+									<th width="90px">底价</th>
+									<th width="180px">生产厂家</th>
+									<th width="180px">用友规格型号</th>
+									<th width="120px">是否需要审核</th>
+									<th nowrap style="word-wrap:break-word;">产品类型</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" name="xh" data-options="required:false"></td>
+									<td><input type="checkbox" name="ck" style="width: 30px;"></td>
+									<td><input type="text" name="ccbh" data-options="required:false"></td>
+									<td><input type="text" name="cpmc" data-options="required:false"></td>
+									<td><input type="text" name="wbxh" data-options="required:false"></td>
+									<td><input type="text" name="xh" data-options="required:false"></td>
+									<td><input type="text" name="gg" data-options="required:false"></td>
+									<td><input type="text" name="jd" data-options="required:false"></td>
+									<td><input type="text" name="zkl" data-options="required:false"></td>
+									<td><input type="text" name="sl" data-options="required:false"></td>
+									<td><input type="text" name="dw" data-options="required:false"></td>
+									<td><input type="text" name="dj" data-options="required:false"></td>
+									<td><input type="text" name="scj" data-options="required:false"></td>
+									<td><input type="text" name="jg" data-options="required:false"></td>
+									<td><input type="text" name="yhj" data-options="required:false"></td>
+									<td><input type="text" name="dj" data-options="required:false"></td>
+									<td><input type="text" name="sccj" data-options="required:false"></td>
+									<td><input type="text" name="yyggxh" data-options="required:false"></td>
+									<td>
+										<select name="sfxysh" style="width: 100%;">
+											<option value="qxz">请选择</option>
+											<option value="s">是</option>
+											<option value="f">否</option>
+										</select>
+									</td>
+									<td><input type="text" name="cplx" data-options="required:false"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="fangan" id="fangan2">
+				<h3><i class="fa fa-table"></i>方案二</h3>
+				<div class="tabforyou">
+					<ul>
+						<li><a href="#"><i class="fa fa-plus"></i>增行</a></li>
+						<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+						<li><a href="#"><i class="fa fa-save"></i>暂存</a></li>
+						<li><a href="#"><i class="fa fa-repeat"></i>刷新</a></li>
+						<li><a href="#"><i class="fa fa-search"></i>查询</a></li>
+					</ul>
+				</div>
+				<div id="sub_table">
+					<form action="" method="post">
+						<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="2300px;">
+							<thead>
+								<tr>
+									<th width="40px">序号</th>
+									<th width="30px"><input type="checkbox" data-options="required:false"></th>
+									<th width="120px">出厂编号</th>
+									<th width="120px">产品名称</th>
+									<th width="120px">外部型号</th>
+									<th width="120px">型号</th>
+									<th width="120px">规格</th>
+									<th width="180px">精度</th>
+									<th width="90px">折扣率</th>
+									<th width="60px">数量</th>
+									<th width="60px">单位</th>
+									<th width="90px">单价</th>
+									<th width="90px">市场价</th>
+									<th width="90px">价格</th>
+									<th width="90px">优惠价</th>
+									<th width="90px">底价</th>
+									<th width="180px">生产厂家</th>
+									<th width="180px">用友规格型号</th>
+									<th width="120px">是否需要审核</th>
+									<th nowrap style="word-wrap:break-word;">产品类型</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" name="xh" data-options="required:false"></td>
+									<td><input type="checkbox" name="ck" style="width: 30px;"></td>
+									<td><input type="text" name="ccbh" data-options="required:false"></td>
+									<td><input type="text" name="cpmc" data-options="required:false"></td>
+									<td><input type="text" name="wbxh" data-options="required:false"></td>
+									<td><input type="text" name="xh" data-options="required:false"></td>
+									<td><input type="text" name="gg" data-options="required:false"></td>
+									<td><input type="text" name="jd" data-options="required:false"></td>
+									<td><input type="text" name="zkl" data-options="required:false"></td>
+									<td><input type="text" name="sl" data-options="required:false"></td>
+									<td><input type="text" name="dw" data-options="required:false"></td>
+									<td><input type="text" name="dj" data-options="required:false"></td>
+									<td><input type="text" name="scj" data-options="required:false"></td>
+									<td><input type="text" name="jg" data-options="required:false"></td>
+									<td><input type="text" name="yhj" data-options="required:false"></td>
+									<td><input type="text" name="dj" data-options="required:false"></td>
+									<td><input type="text" name="sccj" data-options="required:false"></td>
+									<td><input type="text" name="yyggxh" data-options="required:false"></td>
+									<td>
+										<select name="sfxysh" style="width: 100%;">
+											<option value="qxz">请选择</option>
+											<option value="s">是</option>
+											<option value="f">否</option>
+										</select>
+									</td>
+									<td><input type="text" name="cplx" data-options="required:false"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="fangan" id="fangan3">
+				<h3><i class="fa fa-table"></i>方案三</h3>
+				<div class="tabforyou">
+					<ul>
+						<li><a href="#"><i class="fa fa-plus"></i>增行</a></li>
+						<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+						<li><a href="#"><i class="fa fa-save"></i>暂存</a></li>
+						<li><a href="#"><i class="fa fa-repeat"></i>刷新</a></li>
+						<li><a href="#"><i class="fa fa-search"></i>查询</a></li>
+					</ul>
+				</div>
+				<div id="sub_table">
+					<form action="" method="post">
+						<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="2300px;">
+							<thead>
+								<tr>
+									<th width="40px">序号</th>
+									<th width="30px"><input type="checkbox" data-options="required:false"></th>
+									<th width="120px">出厂编号</th>
+									<th width="120px">产品名称</th>
+									<th width="120px">外部型号</th>
+									<th width="120px">型号</th>
+									<th width="120px">规格</th>
+									<th width="180px">精度</th>
+									<th width="190px">折扣率</th>
+									<th width="60px">数量</th>
+									<th width="60px">单位</th>
+									<th width="90px">单价</th>
+									<th width="90px">市场价</th>
+									<th width="90px">价格</th>
+									<th width="90px">优惠价</th>
+									<th width="90px">底价</th>
+									<th width="180px">生产厂家</th>
+									<th width="180px">用友规格型号</th>
+									<th width="120px">是否需要审核</th>
+									<th nowrap style="word-wrap:break-word;">产品类型</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="text" name="xh" data-options="required:false"></td>
+									<td><input type="checkbox" name="ck" style="width: 30px;"></td>
+									<td><input type="text" name="ccbh" data-options="required:false"></td>
+									<td><input type="text" name="cpmc" data-options="required:false"></td>
+									<td><input type="text" name="wbxh" data-options="required:false"></td>
+									<td><input type="text" name="xh" data-options="required:false"></td>
+									<td><input type="text" name="gg" data-options="required:false"></td>
+									<td><input type="text" name="jd" data-options="required:false"></td>
+									<td><input type="text" name="zkl" data-options="required:false"></td>
+									<td><input type="text" name="sl" data-options="required:false"></td>
+									<td><input type="text" name="dw" data-options="required:false"></td>
+									<td><input type="text" name="dj" data-options="required:false"></td>
+									<td><input type="text" name="scj" data-options="required:false"></td>
+									<td><input type="text" name="jg" data-options="required:false"></td>
+									<td><input type="text" name="yhj" data-options="required:false"></td>
+									<td><input type="text" name="dj" data-options="required:false"></td>
+									<td><input type="text" name="sccj" data-options="required:false"></td>
+									<td><input type="text" name="yyggxh" data-options="required:false"></td>
+									<td>
+										<select name="sfxysh" style="width: 100%;">
+											<option value="qxz">请选择</option>
+											<option value="s">是</option>
+											<option value="f">否</option>
+										</select>
+									</td>
+									<td><input type="text" name="cplx" data-options="required:false"></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+<!-- 上传附件 -->
+		<div id="message_area">
+			<h3><i class="fa fa-table"></i>附件信息<span class="span">（单个附件小于4M）</span></h3>
+			<div class="fix_file">
+				<label for="file_prew" title="选择上传文件">选择文件:</label><input tabindex="2" size="3" name="report" id="file_prew" type="file" onchange="document.getElementById('xFile').value=this.value">
+			</div>
+ 		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(e){
+    		$("#main_table table tr td ul li a").click(function(){
+				$(".fangan").hide()
+				$(".renwulist ul li a").removeClass("fanganxz")
+				$($(this).attr("href")).fadeIn()
+				$(this).addClass("fanganxz")
+				})
+		}); 
+	</script>
+</body>
+</html>

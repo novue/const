@@ -1,0 +1,418 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选择客户-弹出框</title>
+	<link rel="stylesheet" href="css/ConST_lb-tanchu.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<!-- <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css"> -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+	<div class="easyui-panel" style="height: 100%;padding:0 10px;overflow-y:hidden;" data-options="fit:true,border:false,">
+		<header style="background:transparent;height:28px;padding:0 10px;border:0">
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#" target="_blank"><i class="fa fa-plus"></i>添加</a></li>
+					<li><a href="#"><i class="fa fa-check"></i>确认</a></li>
+					<li><a href="#"><i class="fa fa-reply"></i>撤销</a></li>
+					<li><a href="#"><i class="fa fa-times"></i>关闭</a></li>
+				</ul>
+			</div>
+		</header>
+		<table id="dg" class="easyui-datagrid" title="" toolbar="#tb" style="width:100%;"
+			data-options="
+				rownumbers:true,
+				singleSelect:false,
+				pagination:true,
+				fit:true,
+				url:'datagrid_data1.json',
+				method:'get'
+				">
+			<thead>
+				<tr>
+					<th field="ck" width="40px" checkbox="true"></th>
+					<th field="客户编码" width="90px" align="left">客户编码</th>
+					<th field="客户" width="210px;" align="left">客户</th>
+					<th field="用户名称" width="210px;" align="left">用户名称</th>
+					<th field="接收日期" width="360px;" align="left">地址</th>
+					<th field="产品名称" width="120px;" align="left">产品名称</th>
+					<th field="规格型号" width="120px" align="left">规格型号</th>
+					<th field="故障现象" width="360px;" align="left">故障现象</th>
+					<th field="故障原因" width="360px;" align="left">故障原因</th>
+					<th field="维修描述" width="360px;" align="left">维修描述</th>
+					<th field="区域" width="60px;" align="left">区域</th>
+					<th field="客户类型" width="90px;" align="left">客户类型</th>
+					<th field="邮编" width="90px;" align="left">邮编</th>
+					<th field="联系人" width="90px;" align="left">联系人</th>
+					<th field="联系电话" width="120px;" align="left">联系电话</th>
+					<th field="传真" width="120px;" align="left">传真</th>
+					<th field="邮箱" width="120px;" align="left">邮箱</th>
+					<th field="QQ" width="90px;" align="left">QQ</th>
+					<th field="使用人" width="90px;" align="left">使用人</th>
+					<th field="使用人电话" width="120px;" align="left">使用人电话</th>
+					<th field="销售人员" width="90px;" align="left">销售人员</th>
+					<th field="销售人员电话" width="120px;" align="left">销售人员电话</th>
+					<th field="入库人" width="90px;" align="left">入库人</th>
+					<th field="返修日期" width="90px;" align="left">返修日期</th>
+					<th field="出厂编号" width="120px;" align="left">出厂编号</th>
+					<th field="数据来源" width="120px;" align="left">数据来源</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td ></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>010283</td>
+					<td>四川宏华814厂</td>
+					<td>四川宏华814厂</td>
+					<td>四川省峨眉市双福镇814厂</td>
+					<td>智能压力发生器</td>
+					<td>ConST711</td>
+					<td>进气泵有问题</td>
+					<td>排污阀岛腐蚀，电磁阀一个生锈</td>
+					<td>3333</td>
+					<td>3333</td>
+					<td>国内</td>
+					<td>3333</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>13350760381</td>
+					<td>11111111</td>
+					<td>2222</td>
+					<td>孙开京</td>
+					<td>13350760381</td>
+					<td>罗斌</td>
+					<td>13088089913</td>
+					<td>姜丹</td>
+					<td>2015-03-24</td>
+					<td>71112020022</td>
+					<td>历史维修记录</td>
+				</tr>
+			</tbody>
+		</table>
+		<div id="tb" style="padding:3px; display: none;">    
+	    	<span>出厂编号:</span>    
+	    	<input id="itemid" style="line-height:26px;border:1px solid #ccc">    
+	    	<span>客户:</span>    
+	    	<input id="productid" style="line-height:26px;border:1px solid #ccc">    
+	   		<a href="#" plain="true" onclick="doSearch()"><i class="fa fa-search"></i>执行过滤条件</a>    
+		</div> 
+	</div>
+
+</body>
+</html>

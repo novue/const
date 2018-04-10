@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>康斯特销售合同</title>
+	<link rel="stylesheet" href="css/ConST_biaodan.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+<!-- menu_top -->
+	<div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb.html">康斯特CRM</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb_fahuo.html">销售合同</a></li>
+		</ul>
+	</div>
+
+<!-- content_table -->
+	<div class="content_table">
+		
+		<div class="tabforyou">
+			<ul>
+				<li><a href="#"><i class="fa fa-file-text"></i>预览</a></li>
+				<li><a href="#"><i class="fa fa-copy"></i>复制</a></li>
+				<li><a href="#"><i class="fa fa-save"></i>保存</a></li>
+				<li><a href="#"><i class="fa fa-user"></i>提交</a></li>
+			</ul>
+		</div>
+
+<!-- main_table -->
+		<div id="main_table">
+			<h3>康斯特销售合同</h3>
+			<div class="biaotou">
+				<label for="bddh">表单单号：</label><input class="easyui-textbox" id="bddh" name="bddh" data-options="required:false" style="width: 200px;">
+				<label for="qxdd">签约地点：</label><input class="easyui-textbox" value="北京" id="qxdd" name="qxdd" data-options="required:false" style="width: 200px;">
+				<label for="qxsj">签约时间：</label><input class="easyui-datebox textbox" id="qxsj" name="qxsj" data-options="required:false" style="width: 200px;">
+			</div>
+			<form action="" method="post">
+				<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="100%">
+					<tr>
+						<td align="center" colspan="6" class="subtitle">购货方信息</td>
+					</tr>
+					<tr>
+						<td>合同单位<span class="span">*</span></td>
+						<td>
+							<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 90%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+						</td>
+						<td>地址<span class="span">*</span></td>
+						<td><input class="easyui-textbox" name="dz" data-options="required:false" style="width: 100%;"></td>
+						<td>合同单位地区<span class="span">*</span></td>
+						<td><input class="easyui-textbox" name="htdwdz" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>是否中间商</td>
+						<td>
+							<form action="">
+								<input type="radio" name="sfxygz" class="sfzjs" id="yes" data-options="required:false"><label for="yes">是</label>
+								<input type="radio" name="sfxygz" class="sfzjs" id="no" data-options="required:false"><label for="no">否</label>
+							</form>
+						</td>
+						<td>最终用户名称</td>
+						<td><input class="easyui-textbox" id="" name="zzyhmc" data-options="required:false" style="width: 100%;"></td>
+						<td>行业分类</td>
+						<td>
+							<input class="easyui-textbox comboInput" id="itemNo" name="hyfl" data-options="editable:false, buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 80%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 12%">邮箱</td>
+						<td style="width: 24%">
+							<input class="easyui-textbox" name="yx" data-options="required:false" style="width: 100%;"><span class="bitian"></span>
+						</td>
+						<td style="width: 12%">传真</td>
+						<td style="width: 20%"><input class="easyui-textbox" name="cz" data-options="required:false" style="width: 100%;"></td>
+						<td style="width: 12%">联系电话<span class="span">*</span></td>	
+						<td style="width: 20%"><input class="easyui-textbox" name="lxdh" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>法定代表人</td>
+						<td><input class="easyui-textbox" name="fddbr" data-options="required:false" style="width: 100%;"></td>
+						<td>注册电话</td>
+						<td><input class="easyui-textbox" name="zcdh" data-options="required:false" style="width: 100%;"></td>
+						<td>邮政编码</td>
+						<td><input class="easyui-textbox" name="yzbm" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>委托代理人<span class="span">*</span></td>
+						<td><input class="easyui-textbox" name="wtdlr" data-options="required:false" style="width: 100%;"></td>
+						<td>代理人手机</td>
+						<td><input class="easyui-textbox" name="dlrsj" data-options="required:false" style="width: 100%;"></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>开户银行</td>
+						<td><input class="easyui-textbox" name="khyh" data-options="required:false" style="width: 100%;"></td>
+						<td>账号</td>
+						<td><input class="easyui-textbox" name="zh" data-options="required:false" style="width: 100%;"></td>
+						<td>税号</td>
+						<td><input class="easyui-textbox" name="sh" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="6" class="subtitle">条款信息</td>
+					</tr>
+					<tr>
+						<td >付款方式</td>
+						<td>
+							<select class="easyui-combobox" name="fkfs" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="kdfh">款到发货</option>
+								<option value="hdfk">货到付款</option>
+								<option value="fqfk">分期付款</option>
+							</select>
+						</td>
+						<td>付款期限</td>
+						<td><input class="easyui-textbox" name="fkqx" data-options="required:false" style="width: 100%;"></td>
+						<td>付款说明</td>
+						<td><input class="easyui-textbox" name="fksm" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>交货时间说明</td>
+						<td><input class="easyui-textbox" name="jhsjsm" data-options="required:false" style="width: 100%;"></td>
+						<td>交货地点</td>
+						<td><input class="easyui-textbox" name="jhsjsm" data-options="required:false" style="width: 100%;"></td>
+						<td>交货方式</td>
+						<td>
+							<select class="easyui-combobox" name="jhfs" style="width: 100%;">
+								<option value="qxz">请选择</option>
+								<option value="qy">汽运</option>
+								<option value="hdfk">中铁快运</option>
+								<option value="kdfh">快递发货</option>
+								<option value="zt">自提</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>质保金比例</td>
+						<td><input class="easyui-textbox" name="zbjbl" data-options="required:false" style="width: 100%;"></td>
+						<td>质保期</td>
+						<td>
+							<select class="easyui-combobox" name="zbq" style="width: 100%;">
+								<option value="qxz">请选择</option>
+								<option value="yn">1年</option>
+								<option value="en">2年</option>
+								<option value="sn">3年</option>
+							</select>
+						</td>
+						<td>供货周期天数</td>
+						<td><input class="easyui-textbox" name="zbjbl" data-options="required:false" style="width: 60%;">&nbsp;个工作日</td>
+					</tr>
+					<tr>
+						<td>合同有效期</td>
+						<td>
+							<input class="easyui-datebox textbox" name="htyxq" data-options="required:false" style="width: 40%;">&nbsp;至&nbsp;<input class="easyui-datebox textbox" name="htyxq" data-options="required:false" style="width: 40%;">
+						</td>
+						<td>收货人联系方式</td>
+						<td><input class="easyui-textbox" name="shrlxfs" data-options="required:false" style="width: 100%;"></td>
+						<td>收货地址</td>
+						<td><input class="easyui-textbox" name="shdz" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="6" class="subtitle">收货信息</td>
+					</tr>
+					<tr>
+						<td>收货人</td>
+						<td>
+							<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 90%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+						</td>
+						<td>收货人联系方式<span class="span">*</span></td>
+						<td><input class="easyui-textbox" name="shrlxfs" data-options="required:false" style="width: 100%;"></td>
+						<td>收货地址<span class="span">*</span></td>
+						<td><input class="easyui-textbox" name="shdz" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>发货要求</td>
+						<td colspan="5"><input class="easyui-textbox" name="fhyq" data-options="required:false" style="width: 80%;"></td>
+					</tr>
+					<tr>
+						<td align="center" colspan="6" class="subtitle">其他信息</td>
+					</tr>
+					<tr>
+						<td>金额合计</td>
+						<td><input class="easyui-textbox" name="jehj" data-options="required:false" style="width: 100%;"></td>
+						<td>金额合计大写  </td>
+						<td colspan="3"><input class="easyui-textbox" name="wldh" data-options="required:false" style="width: 100%;"></td>
+					</tr>
+					<tr>
+						<td>发给客户方式</td>
+						<td>
+							<select class="easyui-combobox" name="fkfs" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="yj">邮件</option>
+								<option value="cz">传真</option>
+								<option value="yj">邮寄</option>
+								<option value="df">单方</option>
+							</select>
+						</td>
+						<td>选择价格方案</td>
+						<td colspan="3">
+							<form action="">
+								<input type="radio" name="xzjgfa" class="sfzjs" id="scj" data-options="required:false"><label for="scj">市场价</label>
+								<input type="radio" name="xzjgfa" class="sfzjs" id="dj" data-options="required:false"><label for="dj">底价</label>
+							</form>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+<!-- sub_area  start -->
+		<div id="sub_area">
+			<h3><i class="fa fa-table"></i>合同标的物列表</h3>
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+					<li><a href="#"><i class="fa fa-save"></i>暂存</a></li>
+					<li><a href="#"><i class="fa fa-repeat"></i>刷新</a></li>
+					<li><a href="#"><i class="fa fa-search"></i>查询</a></li>
+					<li><a href="#"><i class="fa fa-plus-square"></i>批量添加</a></li>
+				</ul>
+			</div>
+			<div id="sub_table">
+				<form action="" method="post">
+					<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="2100;">
+						<thead>
+							<tr>
+								<th width="40px">序号</th>
+								<th width="30px"><input type="checkbox" data-options="required:false"></th>
+								<th width="120px">出厂编号</th>
+								<th width="120px">产品名称</th>
+								<th width="120px">外部型号</th>
+								<th width="180px">规格</th>
+								<th width="180px">精度</th>
+								<th width="60px">数量</th>
+								<th width="60px">单位</th>
+								<th width="90px">单价</th>
+								<th width="90px">金额</th>
+								<th width="90px">市场价</th>
+								<th width="180px">底价</th>
+								<th width="270px">传感器的U8存货编码</th>
+								<th width="270px">传感器的U8型号</th>
+								<th nowrap style="word-wrap:break-word;">产品类型</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="text" name="xh" data-options="required:false"></td>
+								<td><input type="checkbox" name="ck" style="width: 30px;"></td>
+								<td><input type="text" name="ccbh" data-options="required:false"></td>
+								<td><input type="text" name="cpmc" data-options="required:false"></td>
+								<td><input type="text" name="wbxh" data-options="required:false"></td>
+								<td><input type="text" name="gg" data-options="required:false"></td>
+								<td><input type="text" name="jd" data-options="required:false"></td>
+								<td><input type="text" name="sl" data-options="required:false"></td>
+								<td><input type="text" name="dw" data-options="required:false"></td>
+								<td><input type="text" name="dj" data-options="required:false"></td>
+								<td><input type="text" name="je" data-options="required:false"></td>
+								<td><input type="text" name="scj" data-options="required:false"></td>
+								<td><input type="text" name="dj" data-options="required:false"></td>
+								<td><input type="text" name="cgqdu8chbm" data-options="required:false"></td>
+								<td><input type="text" name="cgqdu8xh" data-options="required:false"></td>
+								<td><input type="text" name="cplx" data-options="required:false"></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+			<div class="xshttk"><a href="#">显示合同条款</a></div>
+		</div>
+<!-- 上传附件 -->
+		<div id="message_area">
+			<h3><i class="fa fa-table" title="选择上传文件"></i>附件信息<span class="span">（单个附件小于4M）</span></h3>
+			<div class="fix_file">
+				<label for="file_prew" title="选择上传文件">上传附件:</label><input tabindex="2" size="3" name="report" id="file_prew" type="file" onchange="document.getElementById('xFile').value=this.value">
+			</div>
+ 		</div>
+	</div>
+
+	<script>
+		$(document).ready(function(e){
+    		$("#main_table table tr td ul li a").click(function(){
+				$(".fangan").hide()
+				$(".renwulist ul li a").removeClass("fanganxz")
+				$($(this).attr("href")).fadeIn()
+				$(this).addClass("fanganxz")
+				})
+		}); 
+	</script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>成套产品价格表</title>
+	<link rel="stylesheet" href="css/ConST_lb.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<!-- 引入easyui css -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default.css">
+
+	
+</head>
+<body>
+	<div class="easyui-panel" style="height: 100%;padding:0 10px;overflow-y:hidden;" data-options="fit:true,border:false,">
+		<header style="background:transparent;height:28px;padding:0 10px;border:0">
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#" onclick="$('#dlg').dialog('open')"><i class="fa fa-plus"></i>添加</a></li>
+					<li><a href="#" onclick="$('#dlf').dialog('open')"><i class="fa fa-pencil"></i>修改</a></li>
+					<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+					<li><a href="#" onclick="$('#ch').dialog('open')"><i class="fa fa-search"></i>查询</a></li>
+				</ul>
+			</div>
+		</header>
+		</header>
+		<table id="dg" class="easyui-datagrid" title="" toolbar="#tb" style="width:100%;"
+			data-options="
+				rownumbers:true,
+				singleSelect:false,
+				pagination:true,
+				fit:true,
+				url:'datagrid_data1.json',
+				method:'get'
+				">
+			<thead>
+				<tr>
+					<th field="ck" width="2%" checkbox="true"></th>
+					<th field="产品编码" width="8%" align="left">产品编码</th>
+					<th field="产品名称" width="20%" align="left">产品名称</th>
+					<th field="规格" width="15%" align="left">规格</th>
+					<th field="规格" width="15%" align="left">U8规格型号</th>
+					<th field="型号" width="10%" align="left">型号</th>
+					<th field="单位" width="8%" align="left">单位</th>
+					<th field="精度" width="8%" align="left">精度</th>
+					<th field="单价" width="8%" align="left">单价</th>
+					<th field="底价" width="8%" align="left">底价</th>
+					<th field="数量" width="8%" align="left">数量</th>
+					<th field="传感器存货编码" width="12%" align="left">传感器存货编码</th>
+					<th field="传感器存货名称" width="12%" align="left">传感器存货名称</th>
+					<th field="传感器型号" width="8%" align="left">传感器型号</th>
+					<th field="分类编码" width="8%" align="left">分类编码</th>
+					<th field="分类名称" width="12%" align="left">分类名称</th>
+					<th field="外购/定制" width="8%" align="left">外购/定制</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>1310800011</td>
+					<td>ConST4001热电偶群炉自动检定系统</td>
+					<td>-60～300℃,准确度：±0.1特制外护线，四线制高温线</td>
+					<td></td>
+					<td>CST4001</td>
+					<td>支</td>
+					<td></td>
+					<td>16000</td>
+					<td>12000</td>
+					<td>20</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>电阻</td>
+					<td>定制</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="add_box">
+			<div id="dlg" class="easyui-dialog" title="添加" style="width:800px;height:340px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlg-toolbar',
+						buttons: '#dlg-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">上级节点:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" name="sjjd" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+							<th width="150px">产品编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" id="itemNo" name="cpbm" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">产品名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="cpmc" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    					<th width="150px">规格:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="gg" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">U8规格型号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="u8ggxh" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">型号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="gg" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">单位:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dw" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">精度:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="jd" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">单价:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dj" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">底价:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dj" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+	    					<th width="150px">数量:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="sl" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">传感器产品编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="cgqcpbm" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">传感器产品名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="cgqcpmc" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">传感器型号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dcgqxh" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">分类编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="flbm" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">分类名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="flmc" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">外购/定制:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="xh" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="wg">外购</option>
+									<option value="dz">定制</option>
+								</select>
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlg-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlg').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="fix_box">
+			<div id="dlf" class="easyui-dialog" title="修改" style="width:800px;height:340px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlf-toolbar',
+						buttons: '#dlf-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<tr>
+							<th width="150px">上级节点:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" name="sjjd" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+							<th width="150px">产品编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" value="1310800011" id="itemNo" name="cpbm" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">产品名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="ConST4001热电偶群炉自动检定系统" name="cpmc" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    					<th width="150px">规格:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="-60～300℃,准确度：±0.1特制外护线，四线制高温线" name="gg" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">U8规格型号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="" name="u8ggxh" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">型号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="CST4001" name="gg" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">单位:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dw" value="支" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">精度:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="jd" value="" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">单价:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dj" value="16000" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">底价:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="dj" value="12000" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+	    					<th width="150px">数量:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="sl" value="20" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">传感器产品编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="" name="cgqcpbm" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">传感器产品名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="" name="cgqcpmc" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">传感器型号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="" name="dcgqxh" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">分类编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="" name="flbm" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">分类名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="电阻" name="flmc" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">外购/定制:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="xh" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="wg">外购</option>
+									<option value="dz" selected="true">定制</option>
+								</select>
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlf-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlf').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="ch_box">
+			<div id="ch" class="easyui-dialog" title="查询" style="width:800px;height:310px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#ch-toolbar',
+						buttons: '#ch-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="90px;" cellspacing="0" >
+						<tr>
+							<th width="150px">存货编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="chmc" data-options="required:false,editable:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">存货名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="chmc" data-options="required:false,editable:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">规格型号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="ggxh" data-options="required:false,editable:false" style="width: 100%;">
+	    					</td>
+	    					<th width="150px">最小单价:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zxdj" data-options="required:false,editable:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">最大单价	:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zddj" data-options="required:false,editable:false" style="width: 100%;">
+	    					</td>
+	    					<th width="150px">最小底价:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zxdj" data-options="required:false,editable:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">最大底价	:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zddj" data-options="required:false,editable:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="ch-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#ch').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</tr>
+	
+
+
+<!-- 引入easyui js -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+	<script>
+		$(function(){
+			$("#tb").hide();
+			$(".window").hide();
+			$(".window-shadow").hide();
+			$(".window-mask").hide();
+		})
+	</script>
+</body>
+</html>

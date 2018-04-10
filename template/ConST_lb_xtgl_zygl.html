@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>资源管理表</title>
+	<link rel="stylesheet" href="css/ConST_lb.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default.css">
+
+</head>
+<body>
+	<div class="easyui-panel" style="height: 100%;padding:0 10px;overflow-y:hidden;" data-options="fit:true,border:false,">
+		<header style="background:transparent;height:28px;padding:0 10px;border:0">
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#" onclick="$('#dlg').dialog('open')"><i class="fa fa-plus"></i>添加</a></li>
+					<li><a href="#" onclick="$('#dlf').dialog('open')"><i class="fa fa-pencil"></i>修改</a></li>
+					<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+					<li><a href="#" onclick="$('#ch').dialog('open')"><i class="fa fa-search"></i>查询</a></li>
+				</ul>
+			</div>
+		</header>
+		<table id="dg" class="easyui-datagrid" title="" toolbar="#tb" style="width:100%;"
+			data-options="
+				rownumbers:true,
+				singleSelect:false,
+				pagination:true,
+				fit:true,
+				url:'datagrid_data1.json',
+				method:'get'
+				">
+			<thead>
+				<tr>
+					<th field="ck" width="2%" checkbox="true"></th>
+					<th field="资源编码" width="24%" align="left">资源编码</th>
+					<th field="资源名称" width="12%" align="left">资源名称</th>
+					<th field="资源类型" width="12%" align="left">资源类型</th>
+					<th field="排序" width="10%" align="left">排序</th>
+					<th field="资源路径" width="39%" align="left">资源路径</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>revokeForDrawbackCollection</td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeBuckleUpManagementFee  </td>
+					<td>撤销</td>
+					<td>菜单</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeOtherItemCollection  </td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeForDrawbackCollection</td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeBuckleUpManagementFee  </td>
+					<td>撤销</td>
+					<td>菜单</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeOtherItemCollection  </td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeForDrawbackCollection</td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeBuckleUpManagementFee  </td>
+					<td>撤销</td>
+					<td>菜单</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeOtherItemCollection  </td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeForDrawbackCollection</td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeBuckleUpManagementFee  </td>
+					<td>撤销</td>
+					<td>菜单</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>revokeOtherItemCollection  </td>
+					<td>撤销</td>
+					<td>按钮</td>
+					<td>0</td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="add_box">
+			<div id="dlg" class="easyui-dialog" title="添加" style="width:800px;height:180px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlg-toolbar',
+						buttons: '#dlg-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">上级资源:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" name="sjzy" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+							<th width="150px">资源编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zybm" data-options="required:true," style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">资源名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zymc" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">资源类型:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zylx" data-options="required:true" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">排序:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="px" data-options="required:true" style="width: 100%;">
+	    					</td>
+							<th width="150px">资源路径:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zylj" data-options="required:true," style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlg-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlg').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="fix_box">
+			<div id="dlf" class="easyui-dialog" title="修改" style="width:800px;height:180px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlf-toolbar',
+						buttons: '#dlf-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">上级资源:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" name="sjzy" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+							<th width="150px">资源编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="revokeForDrawbackCollection" name="zybm" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">资源名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="撤销" name="zymc" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">资源类型:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="按钮" name="zylx" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">排序:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="0" name="px" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">资源路径:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="" name="zylj" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlf-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlf').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="ch_box">
+			<div id="ch" class="easyui-dialog" title="查询" style="width:800px;height:120px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#ch-toolbar',
+						buttons: '#ch-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="90px;" cellspacing="0" >
+						<tr>
+							<th width="150px">资源编码:</th>
+	    					<td width="250px"><input class="easyui-textbox" name="zybm" data-options="required:false" style="width: 100%;"></td>
+							<th width="150px">资源名称:</th>
+	    					<td width="250px"><input class="easyui-textbox" name="zymc" data-options="required:false" style="width: 100%;"></td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="ch-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#ch').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 引入easyui js -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+	<script>
+		$(function(){
+			$("#tb").hide();
+			$(".window").hide();
+			$(".window-shadow").hide();
+			$(".window-mask").hide();
+		})
+	</script>
+</body>
+</html>

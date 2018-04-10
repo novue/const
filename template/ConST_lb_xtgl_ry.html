@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>人员表</title>
+	<link rel="stylesheet" href="css/ConST_lb.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+</head>
+<body>
+	<div class="easyui-panel" style="height: 100%;padding:0 10px;overflow-y:hidden;" data-options="fit:true,border:false,">
+		<header style="background:transparent;height:28px;padding:0 10px;border:0">
+		<div class="tabforyou">
+			<ul>
+				<li><a href="#" onclick="$('#dlg').dialog('open')"><i class="fa fa-plus"></i>添加</a></li>
+				<li><a href="#" onclick="$('#dlf').dialog('open')"><i class="fa fa-pencil"></i>修改</a></li>
+				<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+				<li><a href="#"><i class="fa fa-user"></i>设置角色</a></li>
+				<li><a href="#" onclick="$('#ch').dialog('open')"><i class="fa fa-search"></i>查询</a></li>
+				<li><a href="#"><i class="fa fa-key"></i>重置密码</a></li>
+			</ul>
+		</div>
+		</header>
+		<table id="dg" class="easyui-datagrid" title="" toolbar="#tb" style="width:100%;"
+			data-options="
+				rownumbers:true,
+				singleSelect:false,
+				pagination:true,
+				fit:true,
+				url:'datagrid_data1.json',
+				method:'get'
+				">
+			<thead>
+				<tr>
+					<th field="ck" width="2%" checkbox="true"></th>
+					<th field="姓名" width="5%" align="left">姓名</th>
+					<th field="登录名" width="7%" align="left">登录名</th>
+					<th field="密码" width="6%" align="left">密码</th>
+					<th field="传真" width="8%" align="left">传真</th>
+					<th field="公司邮箱" width="16%" align="left">公司邮箱</th>
+					<th field="手机号" width="8%" align="left">手机号</th>
+					<th field="电话" width="8%" align="left">电话</th>
+					<th field="部门编码" width="6%" align="left">部门编码</th>
+					<th field="是否可用" width="6%" align="left">是否可用</th>
+					<th field="性别" width="4%" align="left">性别</th>
+					<th field="区域" width="4%" align="left">区域</th>
+					<th field="首字母缩写" width="7%" align="left">首字母缩写</th>
+					<th field="工号" width="6%" align="left">工号</th>
+					<th field="所在部门" width="6%" align="left">所在部门</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>吕绍现</td>
+					<td>const-lsx</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-lsx@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>lsx</td>
+					<td>cst-lsx</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>付永才</td>
+					<td>const-fyc</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-fyc@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>fyc</td>
+					<td>cst-fyc</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>刘鹏程</td>
+					<td>const-lpc</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-lpc@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>lpc</td>
+					<td>cst-lpc</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>赵鹏飞</td>
+					<td>const-zpf</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-zpf@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>zpf</td>
+					<td>cst-zpf</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>姜丹</td>
+					<td>const-jd</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-jd@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>jd</td>
+					<td>cst-jd</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>吕绍现</td>
+					<td>const-lsx</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-lsx@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>lsx</td>
+					<td>cst-lsx</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>付永才</td>
+					<td>const-fyc</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-fyc@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>fyc</td>
+					<td>cst-fyc</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>刘鹏程</td>
+					<td>const-lpc</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-lpc@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>lpc</td>
+					<td>cst-lpc</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>姜丹</td>
+					<td>const-jd</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-jd@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>jd</td>
+					<td>cst-jd</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>刘鹏程</td>
+					<td>const-lpc</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-lpc@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>lpc</td>
+					<td>cst-lpc</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>刘鹏程</td>
+					<td>const-lpc</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-lpc@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>lpc</td>
+					<td>cst-lpc</td>
+					<td>生产中心</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>刘鹏程</td>
+					<td>const-lpc</td>
+					<td>123456</td>
+					<td>010-12345678</td>
+					<td>cst-lpc@constgroup.com</td>
+					<td>18612345678</td>
+					<td>010-12345678</td>
+					<td>cst-002</td>
+					<td>是</td>
+					<td>男</td>
+					<td>北京</td>
+					<td>lpc</td>
+					<td>cst-lpc</td>
+					<td>生产中心</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="add_box">
+			<div id="dlg" class="easyui-dialog" title="添加" style="width:800px;height:320px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlg-toolbar',
+						buttons: '#dlg-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">上级机构:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="sjjg" data-options="required:true," style="width: 100%;">
+	    					</td>
+							<th width="150px">姓名:</th>
+	    					<td width="250px"><input class="easyui-textbox" name="xm" data-options="required:true," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">登录名:</th>
+	    					<td width="250px"><input class="easyui-textbox" name="dlm" data-options="required:true" style="width: 100%;"></td>
+	    					<th>密码:</th>
+	    					<td><input class="easyui-textbox" type="password" name="mm" data-options="required:true," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>传真:</th>
+	    					<td><input class="easyui-textbox" name="cz" data-options="required:true" style="width: 100%;"></td>
+	    					<th>公司邮箱:</th>
+	    					<td><input class="easyui-textbox" name="gsyx" data-options="required:true," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>手机号:</th>
+	    					<td><input class="easyui-textbox" name="sjh" data-options="required:true" style="width: 100%;"></td>
+	    					<th>电话:</th>
+	    					<td><input class="easyui-textbox" name="dh" data-options="required:true," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>部门编码:</th>
+	    					<td><input class="easyui-textbox" name="bmbm" data-options="required:true" style="width: 100%;"></td>
+	    					<th>是否可用:</th>
+	    					<td>
+								<select class="easyui-combobox" name="khlx" style="width: 99%;">
+									<option value="qxz">请选择</option>
+									<option value="s">是</option>
+									<option value="f">否</option>
+								</select>
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th>性别:</th>
+	    					<td><input class="easyui-textbox" name="xb" data-options="required:true" style="width: 100%;"></td>
+	    					<th>区域:</th>
+	    					<td><input class="easyui-textbox" name="qy" data-options="required:true," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>首字母缩写:</th>
+	    					<td><input class="easyui-textbox" name="szmsx" data-options="required:true" style="width: 100%;"></td>
+	    					<th>工号:</th>
+	    					<td><input class="easyui-textbox" name="gh" data-options="required:true," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>所在部门:</th>
+	    					<td><input class="easyui-textbox" name="szbm" data-options="required:true" style="width: 100%;"></td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlg-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlg').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="fix_box">
+			<div id="dlf" class="easyui-dialog" title="修改" style="width:800px;height:320px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlf-toolbar',
+						buttons: '#dlf-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">上级机构:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="研发中心" name="sjjg" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">姓名:</th>
+	    					<td width="250px"><input class="easyui-textbox" value="赵鹏飞" name="xm" data-options="required:false," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">登录名:</th>
+	    					<td width="250px"><input class="easyui-textbox" value="const-zpf" name="dlm" data-options="required:false" style="width: 100%;"></td>
+	    					<th>密码:</th>
+	    					<td><input class="easyui-textbox" type="password" value="123456" name="mm" data-options="required:false," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>传真:</th>
+	    					<td><input class="easyui-textbox" value="010-12345678" name="cz" data-options="required:false" style="width: 100%;"></td>
+	    					<th>公司邮箱:</th>
+	    					<td><input class="easyui-textbox" value="cst-zpf@constgroup.com" name="gsyx" data-options="required:false," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>手机号:</th>
+	    					<td><input class="easyui-textbox" value="18612345678" name="sjh" data-options="required:false" style="width: 100%;"></td>
+	    					<th>电话:</th>
+	    					<td><input class="easyui-textbox" value="010-12345678" name="dh" data-options="required:false," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>部门编码:</th>
+	    					<td><input class="easyui-textbox" value="cst-002" name="bmbm" data-options="required:false" style="width: 100%;"></td>
+	    					<th>是否可用:</th>
+	    					<td>
+								<select class="easyui-combobox" name="khlx" style="width: 99%;">
+									<option value="qxz">请选择</option>
+									<option value="s" selected="true">是</option>
+									<option value="f">否</option>
+								</select>
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th>性别:</th>
+	    					<td><input class="easyui-textbox" value="是" name="xb" data-options="required:false" style="width: 100%;"></td>
+	    					<th>区域:</th>
+	    					<td><input class="easyui-textbox" value="北京" name="qy" data-options="required:false," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>首字母缩写:</th>
+	    					<td><input class="easyui-textbox" value="zpf" name="szmsx" data-options="required:false" style="width: 100%;"></td>
+	    					<th>工号:</th>
+	    					<td><input class="easyui-textbox" value="cst-zpf" name="gh" data-options="required:false," style="width: 100%;"></td>
+	    				</tr>
+	    				<tr>
+							<th>所在部门:</th>
+	    					<td><input class="easyui-textbox" value="生产中心" name="szbm" data-options="required:false" style="width: 100%;"></td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlf-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlf').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="ch_box">
+			<div id="ch" class="easyui-dialog" title="查询" style="width:800px;height:180px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#ch-toolbar',
+						buttons: '#ch-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">姓名:</th>
+	    					<td width="250px;"><input class="easyui-textbox" name="xm" data-options="required:false," style="width: 100%;"></td>
+							<th width="150px">登录名:</th>
+	    					<td width="250px;"><input class="easyui-textbox" name="dlm" data-options="required:false" style="width: 100%;"></td>
+	    				</tr>
+						<tr>
+	    					<th width="150px">公司邮箱:</th>
+	    					<td width="250px;"><input class="easyui-textbox" name="gsyx" data-options="required:false," style="width: 100%;"></td>
+							<th width="150px">手机号:</th>
+	    					<td width="250px;"><input class="easyui-textbox" name="sjh" data-options="required:false" style="width: 100%;"></td>
+	    				</tr>
+						<tr>
+	    					<th width="150px">区域:</th>
+	    					<td width="250px;"><input class="easyui-textbox" name="qy" data-options="required:false," style="width: 100%;"></td>
+							<th width="150px">工号:</th>
+	    					<td width="250px;"><input class="easyui-textbox" name="gh" data-options="required:false" style="width: 100%;"></td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="ch-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#ch').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 引入easyui js -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+	<script>
+		$(function(){
+			$("#tb").hide();
+			$(".window").hide();
+			$(".window-shadow").hide();
+			$(".window-mask").hide();
+		})
+	</script>
+</body>
+</html>

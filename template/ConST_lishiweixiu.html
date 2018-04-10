@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>历史维修记录表</title>
+	<link rel="stylesheet" href="css/ConST_biaodan.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+<!-- menu_top -->
+	<!-- <div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb.html">康斯特CRM</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb_fahuo.html">历史维修记录表</a></li>
+		</ul>
+	</div> -->
+
+<!-- content_table -->
+	<div class="content_table">
+		
+		<div class="tabforyou">
+			<ul>
+				<li><a href="#"><i class="fa fa-save"></i>保存</a></li>
+			</ul>
+		</div>
+
+<!-- main_table -->
+		<div id="main_table">
+			<h3>历史维修记录表</h3>
+			<form action="" method="post">
+				<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="100%">
+					<tr>
+						<td style="width: 8%">年度</td>
+						<td style="width: 17%">
+							<select class="easyui-combobox" name="yf" style="width: 100%;">
+								<option value="qxz">请选择</option>
+								<option value="1">2013</option>
+								<option value="2">2014</option>
+								<option value="3">2015</option>
+								<option value="4">2016</option>
+								<option value="5">2017</option>
+								<option value="6">2018</option>
+								<option value="7">2019</option>
+								<option value="8">2020</option>
+							</select>
+						</td>
+						<td style="width: 8%">客户类型</td>
+						<td style="width: 17%">
+							<select class="easyui-combobox" name="khlx" style="width: 100%;">
+								<option value="qxz">请选择</option>
+								<option value="gn">国内</option>
+								<option value="gw">国外</option>
+							</select>
+						</td>
+						<td style="width: 8%">产品类型</td>
+						<td style="width: 17%">
+							<select class="easyui-combobox" name="cplx" style="width: 100%;">
+								<option value="qxz">请选择</option>
+								<option value="gn">测距</option>
+								<option value="gw">测温</option>
+							</select>
+						</td>
+						<td style="width: 8%">月份</td>
+						<td style="width: 17%">
+							<select class="easyui-combobox" name="yf" style="width: 100%;">
+								<option value="qxz">请选择</option>
+								<option value="1">01</option>
+								<option value="2">02</option>
+								<option value="3">03</option>
+								<option value="4">04</option>
+								<option value="5">05</option>
+								<option value="6">06</option>
+								<option value="7">07</option>
+								<option value="8">08</option>
+								<option value="9">09</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+<!-- fangan  start -->
+		<div id="sub_area">
+				<h3><i class="fa fa-table"></i>历史维修记录子表</h3>
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#"><i class="fa fa-plus"></i>增行</a></li>
+					<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+					<li><a href="#"><i class="fa fa-save"></i>暂存</a></li>
+					<li><a href="#"><i class="fa fa-search"></i>查询</a></li>
+					<li><a href="#"><i class="fa fa-file-excel-o"></i>Excel导入</a></li>
+				</ul>
+			</div>
+			<div id="sub_table">
+				<form action="" method="post">
+					<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="4100px;">
+						<thead>
+							<tr>
+								<th width="40px">序号</th>
+								<th width="30px"><input type="checkbox" data-options="required:false"></th>
+								<th width="120px">返修单号</th>
+								<th width="180px">客户名称</th>
+								<th width="180px">用户名称</th>
+								<th width="90px">联系人</th>
+								<th width="120px">联系人电话</th>
+								<th width="120px">型号</th>
+								<th width="120px">编号量程</th>
+								<th width="180px">故障现象</th>
+								<th width="180px">故障原因</th>
+								<th width="180px">处理情况</th>
+								<th width="150px">出厂日期</th>
+								<th width="150px">返修日期</th>
+								<th width="150px">发货时间及方式</th>
+								<th width="120px">备注</th>
+								<th width="150px">维修入库日期</th>
+								<th width="150px">发货日期</th>
+								<th width="150px">发货方式</th>
+								<th width="90px">是否收费</th>
+								<th width="150px">收费日期</th>
+								<th width="90px">收费金额</th>
+								<th width="90px">是否到账</th>
+								<th width="90px">到账日期</th>
+								<th width="120px">到账金额</th>
+								<th width="180px">发货地址</th>
+								<th width="90px">回访否</th>
+								<th width="120px">延时原因</th>
+								<th width="120px">紧急程度</th>
+								<th nowrap style="word-wrap:break-word;">发货时间临时字段</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="text" name="xh" data-options="required:false"></td>
+								<td><input type="checkbox" name="ck" style="width: 30px;"></td>
+								<td><input type="text" name="fxdh" data-options="required:false"></td>
+								<td><input type="text" name="khmc" data-options="required:false"></td>
+								<td><input type="text" name="yhmc" data-options="required:false"></td>
+								<td><input type="text" name="lxr" data-options="required:false"></td>
+								<td><input type="text" name="lxrdh" data-options="required:false"></td>
+								<td><input type="text" name="xh" data-options="required:false"></td>
+								<td><input type="text" name="bhlc" data-options="required:false"></td>
+								<td><input type="text" name="gzxx" data-options="required:false"></td>
+								<td><input type="text" name="gzyy" data-options="required:false"></td>
+								<td><input type="text" name="clqk" data-options="required:false"></td>
+								<td><input type="text" name="ccrq" data-options="required:false"></td>
+								<td><input type="text" name="fxrq" data-options="required:false"></td>
+								<td><input type="text" name="fhsjjfs" data-options="required:false"></td>
+								<td><input type="text" name="bz" data-options="required:false"></td>
+								<td><input type="text" name="wxrkrq" data-options="required:false"></td>
+								<td><input type="text" name="fhrq" data-options="required:false"></td>
+								<td><input type="text" name="fhfs" data-options="required:false"></td>
+								<td><input type="text" name="sfsf" data-options="required:false"></td>
+								<td><input type="text" name="sfrq" data-options="required:false"></td>
+								<td><input type="text" name="sfje" data-options="required:false"></td>
+								<td><input type="text" name="sfdz" data-options="required:false"></td>
+								<td><input type="text" name="dzrq" data-options="required:false"></td>
+								<td><input type="text" name="dzje" data-options="required:false"></td>
+								<td><input type="text" name="fhdz" data-options="required:false"></td>
+								<td><input type="text" name="hff" data-options="required:false"></td>
+								<td><input type="text" name="ysyy" data-options="required:false"></td>
+								<td><input type="text" name="jjcd" data-options="required:false"></td>
+								<td><input type="text" name="fhsjlszd" data-options="required:false"></td>
+							</tr>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

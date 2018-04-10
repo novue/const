@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>康斯特产品维修回访单</title>
+	<link rel="stylesheet" href="css/ConST_biaodan.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+<!-- menu_top -->
+	<!-- <div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb.html">康斯特CRM</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb_huifang.html">维修回访单</a></li>
+		</ul>
+	</div> -->
+
+<!-- content_table -->
+	<div class="content_table">
+		
+		<div class="tabforyou">
+			<ul>
+				<li><a href="#"><i class="fa fa-file-text"></i>预览</a></li>
+				<li><a href="#"><i class="fa fa-copy"></i>复制</a></li>
+				<li><a href="#"><i class="fa fa-save"></i>保存</a></li>
+				<li><a href="#"><i class="fa fa-user"></i>提交</a></li>
+			</ul>
+		</div>
+
+<!-- main_table -->
+		<div id="main_table">
+			<h3>康斯特产品维修回访单</h3>
+			<div class="biaotou">
+				<label for="bddh">表单单号：</label><input class="easyui-textbox" id="bddh" name="bddh" data-options="required:false" style="width: 200px;">
+			</div>
+			<form action="" method="post">
+				<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="100%">
+					<tr>
+						<td>客户</td>
+						<td colspan="3">
+							<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 80%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+							<a href="#" title="查看历史信息">历史记录</a>
+						</td>
+						<td>用户名称</td>
+						<td colspan="3"><input class="easyui-textbox" name="yhmc" data-options="required:false" style="width: 85%;">
+							<a href="#" title="查看历史信息">历史记录</a>
+						</td>
+					</tr>
+					<tr>
+						<td>地址</td>
+						<td colspan="3"><input class="easyui-textbox" name="dz" data-options="required:false" style="width: 99%;"></td>
+						<td>邮编</td>
+						<td><input class="easyui-textbox" name="yb" data-options="required:false" style="width: 99%;"></td>
+						<td>区域</td>
+						<td><input class="easyui-textbox" name="qy" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td style="width: 8%">客户类型</td>
+						<td style="width: 17%">
+							<select class="easyui-combobox" name="khlx" style="width: 99%;">
+								<option value="qxz">请选择</option>
+								<option value="gn">国内</option>
+								<option value="gw">国外</option>
+							</select>
+						</td>
+						<td style="width: 8%">联系人</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="lxr" data-options="required:false" style="width: 99%;"></td>
+						<td style="width: 8%">联系人电话</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="lxrdh" data-options="required:false" style="width: 99%;"></td>
+						<td style="width: 8%">联系人传真</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="lxrcz" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>联系人邮箱</td>
+						<td><input class="easyui-textbox" name="lxryx" data-options="required:false" style="width: 99%;"></td>
+						<td>联系人QQ</td>
+						<td><input class="easyui-textbox" name="lxrqq" data-options="required:false" style="width: 99%;"></td>
+						<td>使用人</td>
+						<td><input class="easyui-textbox" name="syr" data-options="required:false" style="width: 99%;"></td>
+						<td>使用人电话</td>
+						<td><input class="easyui-textbox" name="syrdh" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td >销售人员</td>
+						<td>
+						<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 99%">
+						</td>
+						<td>销售人员电话</td>
+						<td><input class="easyui-textbox" name="ysrydh" data-options="required:false" style="width: 99%;"></td>
+						<td>入库人</td>
+						<td><input class="easyui-textbox" name="rkr" data-options="required:false" style="width: 99%;"></td>
+						<td>到收快递费用</td>
+						<td><input class="easyui-textbox" name="dskdfy" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>返修日期</td>
+						<td><input class="easyui-datebox textbox" name="fxrq" data-options="required:false" style="width: 99%;"></td>
+						<td>预计完成日期</td>
+						<td><input class="easyui-datebox textbox" name="yjwcrq" data-options="required:false" style="width: 99%;"></td>
+						<td>收货人</td>
+						<td><input class="easyui-textbox" name="shr" data-options="required:false" style="width: 99%;"></td>
+						<td>收货人联系方式</td>
+						<td><input class="easyui-textbox" name="shrlxfs" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>收货地址</td>
+						<td colspan="3"><input class="easyui-textbox" name="shdz" data-options="required:false" style="width: 99%;"></td>
+						<td>发货人</td>
+						<td><input class="easyui-textbox" name="fhr" data-options="required:false" style="width: 99%;"></td>
+						<td>发货日期</td>
+						<td><input class="easyui-datebox textbox" name="fhrq" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>物流公司</td>
+						<td>
+							<select class="easyui-combobox" name="wlgs" style="width: 99%;">
+								<option value="qxz">请选择</option>
+								<option value="ztky">中铁快运</option>
+								<option value="ytkd">圆通快递</option>
+								<option value="EMSkd">EMS快递</option>
+								<option value="sfkd">顺风快递</option>
+								<option value="ydkd">韵达快递</option>
+								<option value="ztkd">中通快递</option>
+								<option value="ttkd">天天快递</option>
+								<option value="htkd">汇通快递</option>
+								<option value="dbkd">德邦快递</option>
+								<option value="ytkd2">运通快递</option>
+							</select>
+						</td>
+						<td>物流单号</td>
+						<td><input class="easyui-textbox" name="wldh" data-options="required:false" style="width: 99%;"></td>
+						<td>物流公司</td>
+						<td>
+							<select class="easyui-combobox" name="wlgs" style="width: 99%;">
+								<option value="qxz">请选择</option>
+								<option value="ztky">中铁快运</option>
+								<option value="ytkd">圆通快递</option>
+								<option value="EMSkd">EMS快递</option>
+								<option value="sfkd">顺风快递</option>
+								<option value="ydkd">韵达快递</option>
+								<option value="ztkd">中通快递</option>
+								<option value="ttkd">天天快递</option>
+								<option value="htkd">汇通快递</option>
+								<option value="dbkd">德邦快递</option>
+								<option value="ytkd2">运通快递</option>
+							</select>
+						</td>
+						<td>物流单号</td>
+						<td><input class="easyui-textbox" name="wldh" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>接收单表头备注</td>
+						<td colspan="7"><input class="easyui-textbox" name="wldh" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>发货备注</td>
+						<td colspan="7"><input class="easyui-textbox" name="fhbz" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">产品的整体质量</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="cpztzl" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">产品的稳健性</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="cpdwjx" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">产品的整体质量</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="cpztzl" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">产品使用的方便性</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="cpsydybx" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">售后服务的整体水平</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="shfwdztsp" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">服务的及时性</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="fwdjsx" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">服务的有效性</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="fwdyxx" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">服务人员的服务态度</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="fwrydfwtd" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">返修产品维修的及时性</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="fxcpwxdjsx" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">返修产品维修的修复质量</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="fxcpwxdxfzl" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">产品说明书内容</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="cpsmsnr" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td colspan="2" align="right">产品的包装</td>
+						<td colspan="2">
+							<select class="easyui-combobox" name="cpdbz" style="width: 80%;">
+								<option value="qxz">请选择</option>
+								<option value="hmy">很满意100分</option>
+								<option value="my">满意80分</option>
+								<option value="yb">一般60分</option>
+								<option value="bmy">不满意0分</option>
+							</select>
+						</td>
+						<td colspan="2" align="right">备注</td>
+						<td colspan="2"><input class="easyui-textbox" name="bz2" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+<!-- sub_area -->
+		<div id="sub_area">
+			<h3><i class="fa fa-table"></i>回访子表单</h3>
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#"><i class="fa fa-save"></i>暂存</a></li>
+					<li><a href="#"><i class="fa fa-repeat"></i>刷新</a></li>
+					<li><a href="#"><i class="fa fa-search"></i>查询</a></li>
+				</ul>
+			</div>
+			<div id="sub_table">
+				<form action="" method="post">
+					<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="3600px;">
+						<thead>
+							<tr>
+								<th width="40px">序号</th>
+								<th width="30px"><input type="checkbox" data-options="required:false"></th>
+								<th width="120px">出厂编号</th>
+								<th width="120px">历史记录</th>
+								<th width="120px">产品名称</th>
+								<th width="120px">规格型号</th>
+								<th width="60px">数量</th>
+								<th width="60px">单位</th>
+								<th width="90px">出厂日期</th>
+								<th width="180px">故障现象</th>
+								<th width="180px">故障原因</th>
+								<th width="180px">故障原因描述</th>
+								<th width="180px">处理方案</th>
+								<th width="90px">维修人</th>
+								<th width="180px">完成日期</th>
+								<th width="120px">是否延时</th>
+								<th width="120px">延迟原因</th>
+								<th width="240px">计量报告</th>
+								<th width="120px">紧急与否</th>
+								<th width="120px">是否关注</th>
+								<th width="180px">附件说明</th>
+								<th width="180px;">接收单表体备注</th>
+								<th width="120px">分单号</th>
+								<th width="120px">是否收费</th>
+								<th width="120px">维修备注</th>
+								<th nowrap style="word-wrap:break-word;">计量报告描述</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="text" name="xh" data-options="required:false"></td>
+								<td><input type="checkbox" name="ck" style="width: 30px;"></td>
+								<td><input type="text" name="ccbh" data-options="required:false"></td>
+								<td><input type="text" name="lsjl" data-options="required:false"></td>
+								<td><input type="text" name="cpmc" data-options="required:false"></td>
+								<td><input type="text" name="ggxh" data-options="required:false"></td>
+								<td><input type="text" name="sl" data-options="required:false"></td>
+								<td><input type="text" name="dw" data-options="required:false"></td>
+								<td><input type="text" name="ccrq" data-options="required:false"></td>
+								<td><input type="text" name="gzxx" data-options="required:false"></td>
+								<td><input type="text" name="gzyy" data-options="required:false"></td>
+								<td><input type="text" name="gzyyms" data-options="required:false"></td>
+								<td><input type="text" name="clfa" data-options="required:false"></td>
+								<td><input type="text" name="wxr" data-options="required:false"></td>
+								<td><input type="text" name="wcrq" data-options="required:false"></td>
+								<td><input type="text" name="sfys" data-options="required:false"></td>
+								<td><input type="text" name="ycyy" data-options="required:false"></td>
+								<td><input type="text" name="jlbg" data-options="required:false"></td>
+								<td><input type="text" name="jjyf" data-options="required:false"></td>
+								<td><input type="text" name="sfgz" data-options="required:false"></td>
+								<td><input type="text" name="fjsm" data-options="required:false"></td>
+								<td><input type="text" name="jsdbtbz" data-options="required:false"></td>
+								<td><input type="text" name="lsjl" data-options="required:false"></td>
+								<td><input type="text" name="sfsf" data-options="required:false"></td>
+								<td><input type="text" name="wxtz" data-options="required:false"></td>
+								<td><input type="text" name="jlbgms" data-options="required:false"></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+
+</body>
+</html>

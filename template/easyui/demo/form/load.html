@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Load Form Data - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../../themes/icon.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="../demo.css"> -->
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<div class="easyui-panel" title="" style="width:400px">
+		<div style="padding:10px 60px 20px 60px">
+	    <form id="ff" method="post">
+	    	<table cellpadding="5">
+	    		<tr>
+	    			<td>表单编号:</td>
+	    			<td><input class="easyui-textbox" type="text" name="name" data-options="required:true"></input></td>
+	    		</tr>
+	    		<tr>
+	    			<td>Email:</td>
+	    			<td><input class="easyui-textbox" type="text" name="email" data-options="required:true,validType:'email'"></input></td>
+	    		</tr>
+	    		<tr>
+	    			<td>Subject:</td>
+	    			<td><input class="easyui-textbox" type="text" name="subject" data-options="required:true"></input></td>
+	    		</tr>
+	    	</table>
+	    </form>
+	    </div>
+	</div>
+	<script>
+		function loadLocal(){
+			$('#ff').form('load',{
+				name:'myname',
+				email:'mymail@gmail.com',
+				subject:'subject',
+				message:'message',
+				language:'en'
+			});
+		}
+		function loadRemote(){
+			$('#ff').form('load', 'form_data1.json');
+		}
+		function clearForm(){
+			$('#ff').form('clear');
+		}
+	</script>
+</body>
+</html>

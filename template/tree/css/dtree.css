@@ -1,0 +1,105 @@
+@charset "UTF-8"
+@font-face{
+	font-family: "ConST-font";
+	src:url(fonts/Munro.eot), url(fonts/Munro.otf), url(fonts/Munro.svg), url(fonts/Munro.ttf), url(fonts/Munro.woff);
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border: none;
+}
+li{
+	list-style: none;
+}
+h1 h2 h3 h4 h5 h6{
+	font-weight: normal;
+}
+body{
+	font-family: "microsoft yahei";
+	overflow-y: scroll;
+	overflow-x: scroll;
+	margin: 0 10px 0 10px;
+}
+.dtree {
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #666;
+	white-space: nowrap;
+	width:260px;
+}
+.dtree img {
+	border: 0px;
+	vertical-align: middle;
+}
+.dtree a {
+	color: #333;
+	text-decoration: none;
+}
+.dtree a.node, .dtree a.nodeSel {
+	white-space: nowrap;
+	padding: 1px 2px 1px 2px;
+}
+.dtree a.node:hover, .dtree a.nodeSel:hover {
+	color: #333;
+	text-decoration: underline;
+}
+.dtree a.nodeSel {
+	background-color: #c0d2ec;
+}
+.dtree .clip {
+	overflow: hidden;
+}
+/*iframe部分  start*/
+.contentWrap{
+	position: absolute;
+	bottom: 0;
+	left: 300px;
+	top: 40px;
+	right: 0px;
+}
+.Conframe{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+#Conframe{
+	border: none;
+	height: 100%;
+	width: 100%;
+}
+/*iframe部分  end*/
+/*menu_top start*/
+.menu_top{
+	height: 36px;
+	width: 100%;
+	background: #f9f9f9;
+	border-bottom: 1px #aaa solid;
+}
+.menu_top ul li{
+	float: left;
+	padding-right: 10px;
+}
+.menu_top ul li i{
+	color: #2a67be;
+}
+.menu_top ul li a{
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 36px;
+	color: #2a67be;
+	font-weight: bold;
+}
+.menu_top ul li a:hover{
+	text-decoration: underline;
+}
+.menu_top ul li a span{
+	padding-right: 10px;
+}
+/*menu_top end*/

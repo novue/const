@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Menu Events - jQuery EasyUI Demo</title>
+	<link rel="stylesheet" type="text/css" href="../../themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../../themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../demo.css">
+	<script type="text/javascript" src="../../jquery.min.js"></script>
+	<script type="text/javascript" src="../../jquery.easyui.min.js"></script>
+</head>
+<body>
+	<h2>Menu Events</h2>
+	<p>Right click on page to display menu and click an item.</p>
+	<div style="margin:20px 0;"></div>
+	<div id="mm" class="easyui-menu" data-options="onClick:menuHandler" style="width:120px;">
+		<div data-options="name:'new'">New</div>
+		<div data-options="name:'save',iconCls:'icon-save'">Save</div>
+		<div data-options="name:'print',iconCls:'icon-print'">Print</div>
+		<div class="menu-sep"></div>
+		<div data-options="name:'exit'">Exit</div>
+	</div>
+	<div id="log" class="easyui-panel" title="Event Log" style="height:250px;padding:10px">
+		form action="">
+			<table cellspacing="10px;" cellspacing="0" >
+				<tr>
+					<td width="10%">表单编号</td>
+	    			<td width="15%"><input class="easyui-textbox" name="bdbh" data-options="required:false," style="width: 100%;"></input></td>
+					<td width="10%">区域</td>
+	    			<td width="15%"><input class="easyui-textbox" name="qy" data-options="required:false" style="width: 100%;"></input></td>
+					<td width="10%">客户名称</td>
+	    			<td width="15%"><input class="easyui-textbox" name="khmc" data-options="required:false" style="width: 100%;"></input></td>
+					<td width="10%">用户名称</td>
+	    			<td width="15%"><input class="easyui-textbox" name="yhmc" data-options="required:false" style="width: 100%;"	></input></td>
+				</tr>
+				<tr>
+					<td width="10%">表单编号</td>
+	    			<td width="15%"><input class="easyui-textbox" name="bdbh" data-options="required:false," style="width: 100%;"></input></td>
+					<td width="10%">区域</td>
+	    			<td width="15%"><input class="easyui-textbox" name="qy" data-options="required:false" style="width: 100%;"></input></td>
+					<td width="10%">客户名称</td>
+	    			<td width="15%"><input class="easyui-textbox" name="khmc" data-options="required:false" style="width: 100%;"></input></td>
+					<td width="10%">用户名称</td>
+	    			<td width="15%"><input class="easyui-textbox" name="yhmc" data-options="required:false" style="width: 100%;"	></input></td>
+				</tr>
+				<tr>
+					<td width="10%">表单编号</td>
+	    			<td width="15%"><input class="easyui-textbox" name="bdbh" data-options="required:false," style="width: 100%;"></input></td>
+					<td width="10%">区域</td>
+	    			<td width="15%"><input class="easyui-textbox" name="qy" data-options="required:false" style="width: 100%;"></input></td>
+					<td width="10%">客户名称</td>
+	    			<td width="15%"><input class="easyui-textbox" name="khmc" data-options="required:false" style="width: 100%;"></input></td>
+					<td width="10%">用户名称</td>
+	    			<td width="15%"><input class="easyui-textbox" name="yhmc" data-options="required:false" style="width: 100%;"	></input></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<script>
+		function menuHandler(item){
+			$('#log').prepend('<p>Click Item: '+item.name+'</p>');
+		}
+		$(function(){
+			$(document).bind('contextmenu',function(e){
+				e.preventDefault();
+				$('#mm').menu('show', {
+					left: e.pageX,
+					top: e.pageY
+				});
+			});
+		});
+	</script>
+</body>
+</html>

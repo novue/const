@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>客户档案表</title>
+	<link rel="stylesheet" href="css/ConST_lb.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<!-- 引入easyui css -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default.css">	
+</head>
+<body>
+	<div class="easyui-panel" style="height: 100%;padding:0 10px;overflow-y:hidden;" data-options="fit:true,border:false,">
+		<header style="background:transparent;height:64px;padding:0 10px;border:0">
+			<div class="menu_top">
+				<ul>
+					<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+					<li><i class="fa fa-angle-right"></i><a href="#">基础配置</a></li>
+					<li><i class="fa fa-angle-right"></i><a href="#"><span>客户档案表</span></a></li>
+				</ul>
+			</div>
+			<div class="tabforyou">
+				<ul>
+					<li><a href="#" onclick="$('#dlg').dialog('open')"><i class="fa fa-plus"></i>添加</a></li>
+					<li><a href="#" onclick="$('#dlf').dialog('open')"><i class="fa fa-pencil"></i>修改</a></li>
+					<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+					<li><a href="#" onclick="$('#ch').dialog('open')"><i class="fa fa-search"></i>查询</a></li>
+				</ul>
+			</div>
+		</header>
+		<table id="dg" class="easyui-datagrid" title="" toolbar="#tb" style="width:100%;"
+			data-options="
+				rownumbers:true,
+				singleSelect:false,
+				pagination:true,
+				fit:true,
+				url:'datagrid_data1.json',
+				method:'get'
+				">
+			<thead>
+				<tr>
+					<th field="ck" width="2%" checkbox="true"></th>
+					<th field="客户编码" width="8%" align="left">客户编码</th>
+					<th field="客户名称" width="20%" align="left">客户名称</th>
+					<th field="客户简称" width="10%" align="left">客户简称</th>
+					<th field="客户地址" width="20%" align="left">客户地址</th>
+					<th field="邮编" width="6%" align="left">邮编</th>
+					<th field="客户类型" width="6%" align="left">客户类型</th>
+					<th field="所属地区" width="8%" align="left">所属地区</th>
+					<th field="行业" width="10%" align="left">行业</th>
+					<th field="联系人" width="8%" align="left">联系人</th>
+					<th field="联系人电话" width="8%" align="left">联系人电话</th>
+					<th field="使用人" width="8%" align="left">使用人</th>
+					<th field="使用人电话" width="8%" align="left">使用人电话</th>
+					<th field="销售人员" width="8%" align="left">销售人员</th>
+					<th field="销售人员电话" width="8%" align="left">销售人员电话</th>
+					<th field="传真" width="8%" align="left">传真</th>
+					<th field="邮箱" width="18%" align="left">邮箱</th>
+					<th field="QQ" width="10%" align="left">QQ</th>
+					<th field="法定代表人" width="8%" align="left">法定代表人</th>
+					<th field="委托代理人" width="8%" align="left">委托代理人</th>
+					<th field="注册电话" width="8%" align="left">注册电话</th>
+					<th field="开户银行" width="15%" align="left">开户银行</th>
+					<th field="账号" width="15%" align="left">账号</th>
+					<th field="税号" width="12%" align="left">税号</th>
+					<th field="启用日期" width="12%" align="left">启用日期</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>2016052501</td>
+					<td>北京康斯特仪表科技股份有限公司</td>
+					<td>北京康斯特</td>
+					<td>北京市海淀区丰秀中路3号</td>
+					<td>100000</td>
+					<td>国内</td>
+					<td>北京</td>
+					<td>仪器设备</td>
+					<td>张三丰</td>
+					<td>18612345678</td>
+					<td>张无忌</td>
+					<td>18812345678</td>
+					<td>赵敏</td>
+					<td>18312345678</td>
+					<td>010-56973322</td>
+					<td>office@constgroup.com</td>
+					<td>123456</td>
+					<td>布吉岛</td>
+					<td>布吉岛</td>
+					<td>4001102211</td>
+					<td>ICBC</td>
+					<td>12345678910111213</td>
+					<td>BJ0987654321</td>
+					<td>2016.5.25</td>
+				</tr>
+
+			</tbody>
+		</table>
+		<div class="add_box">
+			<div id="dlg" class="easyui-dialog" title="添加" style="width:800px;height:430px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlg-toolbar',
+						buttons: '#dlg-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">客户编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" id="itemNo" name="khbm" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+							<th width="150px">客户名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="khmc" data-options="required:true,editable:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">客户简称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="khjc" data-options="required:true,editable:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">客户地址:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="khdz" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">邮编:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="yb" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">客户类型:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="khlx" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="gn">国内</option>
+									<option value="gw">国外</option>
+								</select>
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">所属地区:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="ssdq" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">行业:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="hy" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">联系人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="lxr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">联系人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="lxrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">使用人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="syr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">使用人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="syrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">销售人员:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="xsry" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">销售人员电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="xsdhry" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">传真:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="cz" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">邮箱:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="yx" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">QQ:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="qq" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">法定代表人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="fddlr" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">委托代理人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="wtdlr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">注册电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zcdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">开户银行:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="khyh" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">账号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">税号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="sh" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">启用日期:</th>
+	    					<td width="250px">
+	    						<input class="easyui-datebox textbox" name="qyrq" data-options="required:false" style="width: 99%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlg-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlg').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="fix_box">
+			<div id="dlf" class="easyui-dialog" title="修改" style="width:800px;height:430px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#dlf-toolbar',
+						buttons: '#dlf-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="10px;" cellspacing="0" >
+						<tr>
+							<th width="150px">客户编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" id="itemNo" name="khbm" value="2016052501" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+							<th width="150px">客户名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="北京康斯特仪表科技股份有限公司" name="khmc" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">客户简称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="北京康斯特" name="khjc" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">客户地址:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="北京市海淀区丰秀中路3号" name="khdz" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">邮编:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="100000" name="yb" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">客户类型:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="khlx" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="gn" selected="true">国内</option>
+									<option value="gw">国外</option>
+								</select>
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">所属地区:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="北京" name="ssdq" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">行业:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="仪器设备" name="hy" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">联系人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="张三丰" name="lxr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">联系人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="18612345678" name="lxrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">使用人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="张无忌" name="syr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">使用人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="18812345678" name="syrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">销售人员:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="赵敏" name="xsry" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">销售人员电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="18312345678" name="xsdhry" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">传真:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="010-56973322" name="cz" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">邮箱:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="office@constgroup.com" name="yx" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">QQ:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="123456" name="qq" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">法定代表人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="布吉岛" name="fddlr" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">委托代理人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="布吉岛" name="wtdlr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">注册电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="4001102211" name="zcdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">开户银行:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="ICBC" name="khyh" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">账号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="12345678910111213" name="zh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">税号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" value="BJ0987654321" name="sh" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">启用日期:</th>
+	    					<td width="250px">
+	    						<input class="easyui-datebox textbox" name="qyrq" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="dlf-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#dlf').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="ch_box">
+			<div id="ch" class="easyui-dialog" title="查询" style="width:800px;height:260px;padding:5px;" data-options="
+						iconCls: 'icon-save',
+						toolbar: '#ch-toolbar',
+						buttons: '#ch-buttons',
+						modal:true
+					">
+				<form action="">
+					<table style="border-collapse: collapse;" border="1" cellspacing="90px;" cellspacing="0" >
+						<tr>
+							<th width="150px">客户编码:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+								onClickButton:function(){getBudget()}" style="width: 100%">
+	    					</td>
+							<th width="150px">客户名称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="khmc" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">客户简称:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="khjc" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">客户类型:</th>
+	    					<td width="250px">
+	    						<select class="easyui-combobox" name="khlx" style="width: 100%;">
+									<option value="qxz">请选择</option>
+									<option value="gn">国内</option>
+									<option value="gw">国外</option>
+								</select>
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">联系人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="lxr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">联系人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="lxrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">使用人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="syr" data-options="required:false," style="width: 100%;">
+	    					</td>
+							<th width="150px">使用人电话:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="syrdh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">法定代表人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="fddlr" data-options="required:false" style="width: 100%;">
+	    					</td>
+							<th width="150px">委托代理人:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="wtdlr" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+	    				<tr>
+							<th width="150px">账号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="zh" data-options="required:false" style="width: 100%;">
+	    					</td>
+	    					<th width="150px">税号:</th>
+	    					<td width="250px">
+	    						<input class="easyui-textbox" name="sh" data-options="required:false," style="width: 100%;">
+	    					</td>
+	    				</tr>
+					</table>
+				</form>
+			</div>
+			<div id="ch-buttons">
+				<div class="tabforyou">
+					<ul>
+						<li><a href="javascript:void(0)" onclick="javascript:alert('已保存')"><i class="fa fa-check"></i>确定</a></li>
+						<li><a href="javascript:void(0)" onclick="javascript:$('#ch').dialog('close')"><i class="fa fa-times"></i>关闭</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 引入easyui js -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+	<script>
+		$(function(){
+			$("#tb").hide();
+			$(".window").hide();
+			$(".window-shadow").hide();
+			$(".window-mask").hide();
+		})
+	</script>
+</body>
+</html>

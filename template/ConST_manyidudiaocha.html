@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>顾客满意度调查汇总</title>
+	<link rel="stylesheet" href="css/ConST_chaxundiaocha.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+	<div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html"><span>ConST</span></a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#"><span>售后系统报表管理</span></a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#"><span>顾客满意度调查汇总</span></a></li>
+		</ul>
+	</div>
+	<div id="table_manyidu" style="width:100%" title="查询条件">
+		<form action="">
+			<table cellspacing="10px;" cellspacing="0"> 
+				<tr>
+					<th width="8%">表单编号:</th>
+    				<td width="17%"><input class="easyui-textbox" name="bdbh" data-options="required:false," style="width: 100%;"></td>
+					<th width="8%">区域:</th>
+    				<td width="17%"><input class="easyui-textbox" name="qy" data-options="required:false" style="width: 100%;"></td>
+					<th width="8%">客户名称:</th>
+    				<td width="17%"><input class="easyui-textbox" name="khmc" data-options="required:false" style="width: 100%;"></td>
+					<th width="8%">用户名称:</th>
+    				<td width="17%"><input class="easyui-textbox" name="yhmc" data-options="required:false" style="width: 100%;"></td>
+				</tr>
+				<tr>
+					<th>产品名称:</th>
+					<td><input class="easyui-textbox" name="cpmc" data-options="required:false" style="width: 100%;"></td>
+					<th>规格型号:</th>
+					<td><input class="easyui-textbox" name="ggxh" data-options="required:false" style="width: 100%;"></td>
+					<th>起始返修日期:</th>
+					<td><input class="easyui-datebox" name="qsfxrq" data-options="required:false" style="width: 100%;"></td>
+					<th>截止返修日期:</th>
+					<td><input class="easyui-datebox" name="jzfxrq" data-options="required:false" style="width: 100%;"></td>
+				</tr>
+				<tr>
+					<th>故障现象:</th>
+					<td><input class="easyui-textbox" name="gzxx" data-options="required:false" style="width: 100%;"></td>
+					<th>故障原因:</th>
+					<td><input class="easyui-textbox" name="gzyy" data-options="required:false" style="width: 100%;"></td>
+					<th>故障原因描述:</th>
+					<td><input class="easyui-textbox" name="gzyyms" data-options="required:false" style="width: 100%;"></td>
+					<th>处理情况:</th>
+					<td><input class="easyui-textbox" name="clqk" data-options="required:false" style="width: 100%;"></td>
+				</tr>
+				<tr>
+					<th>紧急程度:</th>
+					<td><input class="easyui-textbox" name="jjcd" data-options="required:false" style="width: 100%;"></td>
+					<th>是否超时:</th>
+					<td>
+						<select class="easyui-combobox" name="khlx" style="width: 100%;">
+							<option value="qxz">请选择</option>
+							<option value="s">是</option>
+							<option value="f">否</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div class="tabforyou">
+			<ul>
+				<li class="search"><a href="#" onclick="displayDate()"><i class="fa fa-search"></i>查询</a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-refresh"></i>重置</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="table_huizong">
+		<form action="" method="post">
+			<table style="border-collapse: collapse;" border="1" cellpadding="0" cellspacing="0" >
+				<caption>顾客满意度调查汇总表</caption>
+				<tr>
+					<td>编号：</td>
+					<td colspan="3"><input type="text"></td>
+					<td>序号：</td>
+					<td colspan="3"><input type="text"></td>
+				</tr>
+				<tr>
+					<td colspan="4">调查时间: 全部跨度</td>
+					<td colspan="4">有效调查: 7 份</td>
+				</tr>
+				<tr>
+					<td width="20%">项目</td>
+					<td width="10%">很满意</td>
+					<td width="10%">满意</td>
+					<td width="10%">一般</td>
+					<td width="10%">不满意</td>
+					<td width="10%">未选择</td>
+					<td width="15%">满意度</td>
+					<td width="15%">不满意度</td>
+				</tr>
+				<tr>
+					<td>质量</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>服务</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>外观</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>方便性</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>包装</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>产品的稳定性</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>服务的及时性</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>服务的有效性</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>服务人员的服务态度</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>返修产品维修的及时性</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>返修产品维修后的修复质量</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>产品说明书内容</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td>总计</td>
+					<td>4</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>3</td>
+					<td>57.14%</td>
+					<td>0.0%</td>
+				</tr>
+				<tr>
+					<td rowspan="2" colspan="2">说    明  :</td>
+					<td colspan="6">满 意 度  = （ 很 满 意 + 满 意） / 有效票数 * 100%</td>
+				</tr>
+				<tr>
+					<td colspan="6">不满意度 =  不满意/有效票数*100%</td>
+				</tr>
+				<tr>
+					<td>调查部门</td>
+					<td colspan="3"></td>
+					<td colspan="2">汇总人</td>
+					<td colspan="2"></td>
+				</tr>
+				<tr>
+					<td>汇总时间</td>
+					<td colspan="3"></td>
+					<td colspan="2">审核人</td>
+					<td colspan="2"></td>
+				</tr>
+			</table>
+		</form>
+		<p>保存期限：3年</p>
+	</div>
+
+	<script>
+		function displayDate(){
+				if($(".table_huizong").is(':hidden')){
+					$(".table_huizong").show();
+				}else{
+					$(".table_huizong").hide();
+				}
+		}
+	</script>
+</body>
+</html>

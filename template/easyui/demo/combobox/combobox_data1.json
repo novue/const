@@ -1,0 +1,84 @@
+[{
+	"id":1,
+	"text":"小明",
+	"selected":true,
+	"desc":"Write once, run anywhere"
+},{
+	"id":2,
+	"text":"C#",
+	"desc":"One of the programming languages designed for the Common Language Infrastructure"
+},{
+	"id":3,
+	"text":"Ruby",
+	"desc":"A dynamic, reflective, general-purpose object-oriented programming language"
+},{
+	"id":4,
+	"text":"Perl",
+	"desc":"A high-level, general-purpose, interpreted, dynamic programming language"
+},{
+	"id":5,
+	"text":"Basic",
+	"desc":"A family of general-purpose, high-level programming languages"
+},
+{
+	"id":6,
+	"text":"Java",
+	"desc":"Write once, run anywhere"
+},{
+	"id":7,
+	"text":"C#",
+	"desc":"One of the programming languages designed for the Common Language Infrastructure"
+},{
+	"id":8,
+	"text":"Ruby",
+	"desc":"A dynamic, reflective, general-purpose object-oriented programming language"
+},{
+	"id":9,
+	"text":"Perl",
+	"desc":"A high-level, general-purpose, interpreted, dynamic programming language"
+},{
+	"id":10,
+	"text":"Basic",
+	"desc":"A family of general-purpose, high-level programming languages"
+},
+{
+	"id":11,
+	"text":"Java",
+	"desc":"Write once, run anywhere"
+},{
+	"id":12,
+	"text":"C#",
+	"desc":"One of the programming languages designed for the Common Language Infrastructure"
+},{
+	"id":13,
+	"text":"Ruby",
+	"desc":"A dynamic, reflective, general-purpose object-oriented programming language"
+},{
+	"id":14,
+	"text":"Perl",
+	"desc":"A high-level, general-purpose, interpreted, dynamic programming language"
+},{
+	"id":15,
+	"text":"Basic",
+	"desc":"A family of general-purpose, high-level programming languages"
+},{
+	"id":16,
+	"text":"Java",
+	"desc":"Write once, run anywhere"
+},{
+	"id":17,
+	"text":"C#",
+	"desc":"One of the programming languages designed for the Common Language Infrastructure"
+},{
+	"id":18,
+	"text":"Ruby",
+	"desc":"A dynamic, reflective, general-purpose object-oriented programming language"
+},{
+	"id":19,
+	"text":"Perl",
+	"desc":"A high-level, general-purpose, interpreted, dynamic programming language"
+},{
+	"id":20,
+	"text":"Basic",
+	"desc":"A family of general-purpose, high-level programming languages"
+}]

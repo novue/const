@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>返修产品查询</title>
+	<link rel="stylesheet" href="css/ConST_chaxundiaocha.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+	<div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html"><span>ConST</span></a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#"><span>售后系统报表管理</span></a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#"><span>返修产品查询</span></a></li>
+		</ul>
+	</div>
+	<div id="table_manyidu" title="查询条件" style="width:100%;">
+		<form action="">
+			<table cellspacing="10px;" cellspacing="0" style="width: 100%">
+				<tr>
+					<th width="10%">分单编号:</th>
+    				<td width="15%"><input class="easyui-textbox" name="fdbh" data-options="required:false," style="width: 100%;"></td>
+					<th width="10%">客户名称:</th>
+    				<td width="15%"><input class="easyui-textbox" name="khmc" data-options="required:false" style="width: 100%;"></td>
+					<th width="10%">用户名称:</th>
+    				<td width="15%"><input class="easyui-textbox" name="yhmc" data-options="required:false" style="width: 100%;"></td>
+					<th width="10%">国内外:</th>
+    				<td width="15%">
+						<select class="easyui-combobox" name="wxr" style="width: 100%;">
+							<option value="qxz">请选择</option>
+							<option value="gn">国内</option>
+							<option value="gw">国外</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>起始返修日期:</th>
+					<td><input class="easyui-datebox" name="qsfxrq" data-options="required:false" style="width: 100%;"></td>
+					<th>截止返修日期:</th>
+					<td><input class="easyui-datebox" name="jzfxrq" data-options="required:false" style="width: 100%;"></td>
+					<th>起始发货日期:</th>
+					<td><input class="easyui-datebox" name="qsfhrq" data-options="required:false" style="width: 100%;"></td>
+					<th>截止发货日期:</th>
+					<td><input class="easyui-datebox" name="jzfhrq" data-options="required:false" style="width: 100%;"></td>
+				</tr>
+				<tr>
+					<th>故障现象:</th>
+					<td><input class="easyui-textbox" name="gzxx" data-options="required:false" style="width: 100%;"></td>
+					<th>故障原因:</th>
+					<td><input class="easyui-textbox" name="gzyy" data-options="required:false" style="width: 100%;"></td>
+					<th>故障原因描述:</th>
+					<td><input class="easyui-textbox" name="gzyyms" data-options="required:false" style="width: 100%;"></td>
+					<th>出厂编号:</th>
+					<td><input class="easyui-textbox" name="ccbh" data-options="required:false" style="width: 100%;"></td>
+				</tr>
+				<tr>
+					<th>紧急程度:</th>
+					<td><input class="easyui-textbox" name="jjcd" data-options="required:false" style="width: 100%;"></td>
+					<th>是否延迟:</th>
+					<td>
+						<select class="easyui-combobox" name="khyc" style="width: 100%;">
+							<option value="qxz">请选择</option>
+							<option value="s">是</option>
+							<option value="f">否</option>
+						</select>
+					</td>
+					<th>紧急程度:</th>
+					<td>
+						<input class="easyui-textbox searchInput" id="itemNo" name="jjcd" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 100%">
+					</td>
+					<th>维修人:</th>
+					<td>
+						<select class="easyui-combobox" name="wxr" style="width: 100%;">
+							<option value="qxz">请选择</option>
+							<option value="zpf">赵鹏飞</option>
+							<option value="lsx">吕绍现</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>状态:</th>
+					<td>
+						<input class="easyui-textbox searchInput" id="itemNo" name="jjcd" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 100%">
+					</td>
+					<th>国外返修单号:</th>
+					<td><input class="easyui-textbox" name="gwfxdh" data-options="required:false" style="width: 100%;"></td>
+					<th>分类</th>
+					<td colspan="2">
+						<input type="checkbox" id="ybl" name="ybl"><label for="ybl">仪表类</label>
+						<input type="checkbox" id="wdl" name="wdl"><label for="wdl">温度类</label>
+						<input type="checkbox" id="jxl" name="jxl"><label for="jxl">机械类</label>
+						<input type="checkbox" id="jdytcp" name="jdytcp"><label for="jdytcp">机电一体产品</label>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div class="tabforyou">
+			<ul>
+				<li class="search"><a href="#" onclick="displayDate()"><i class="fa fa-search"></i>查询</a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-file-text-o"></i>故障归类统计报表</a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-file-o"></i>返修产品统计报表</a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-bar-chart-o"></i>返修产品延时统计</a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-bar-chart"></i>维修进度情况统计</a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-tag"></i>自定义报表</a></li>
+				<li><a href="#" target="_blank"><i class="fa fa-refresh"></i>条件重置</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="table_fanxiu">
+		<table id="tt" class="easyui-datagrid" style="width:100%;" url="datagrid24_getdata.php" toolbar="#tb" title="返修查询" iconCls="" rownumbers="true" pagination="true">
+			<thead>
+				<tr>
+					<th field="紧急程度" width="120px" align="center">紧急程度</th>
+					<th field="分单编号" width="120px;" align="center">分单编号</th>
+					<th field="用户名称" width="210px;" align="center">用户名称</th>
+					<th field="产品名称" width="120px;" align="center">产品名称</th>
+					<th field="规格型号" width="120px" align="center">规格型号</th>
+					<th field="出厂编号" width="120px;" align="center">出厂编号</th>
+					<th field="量程" width="120px;" align="center">量程</th>
+					<th field="数量" width="120px;" align="center">数量</th>
+					<th field="单位" width="90px;" align="center">单位</th>
+					<th field="单据状态" width="120px;" align="center">单据状态</th>
+					<th field="故障现象" width="180px;" align="center">故障现象</th>
+					<th field="故障原因分类" width="180px;" align="center">故障原因分类</th>
+					<th field="故障原因" width="180px;" align="center">故障原因</th>
+					<th field="故障原因细节描述" width="360px;" align="center">故障原因细节描述</th>
+					<th field="维修处理详情" width="360px;" align="center">维修处理详情</th>
+					<th field="返修日期" width="180px;" align="center">返修日期</th>
+					<th field="出厂日期" width="180px;" align="center">出厂日期</th>
+					<th field="维修人" width="90px;" align="center">维修人</th>
+					<th field="完成日期" width="180px;" align="center">完成日期</th>
+					<th field="附件及数量" width="150px;" align="center">附件及数量</th>
+					<th field="客户名称" width="120px;" align="center">客户名称</th>
+					<th field="联系人" width="90px;" align="center">联系人</th>
+					<th field="联系人电话" width="120px;" align="center">联系人电话</th>
+					<th field="地址" width="180px;" align="center">地址</th>
+					<th field="传真" width="90px;" align="center">传真</th>
+					<th field="使用人" width="90px;" align="center">使用人</th>
+					<th field="使用人电话" width="120px;" align="center">使用人电话</th>
+					<th field="销售人员" width="90px;" align="center">销售人员</th>
+					<th field="销售人员电话" width="120px;" align="center">销售人员电话</th>
+					<th field="是否关注" width="120px;" align="center">是否关注</th>
+					<th field="到收快递费用" width="150px;" align="center">到收快递费用</th>
+					<th field="延迟原因" width="120px;" align="center">延迟原因</th>
+					<th field="附件文件" width="120px;" align="center">附件文件</th>
+					<th field="发货日期" width="180px;" align="center">发货日期</th>
+					<th field="地区" width="120px;" align="center">地区</th>
+					<th field="国内外" width="90px;" align="center">国内外</th>
+					<th field="是否延迟" width="120px;" align="center">是否延迟</th>
+					<th field="状态" width="120px;" align="center">状态</th>
+					<th field="国外返修单号" width="150px;" align="center">国外返修单号</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<select name="jjcd" id="jjcd" style="width:100%">
+							<option value="jj">紧急</option>
+							<option value="yb" selected="selected">一般</option>
+						</select>
+					</td>
+					<td>201606150101</td>
+					<td>北京康斯特</td>
+					<td>测量仪</td>
+					<td>ConST0012</td>
+					<td>ConST201606030102</td>
+					<td>0~100</td>
+					<td>1</td>
+					<td>摄氏度</td>
+					<td>已提交</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>张无忌</td>
+					<td></td>
+					<td>1</td>
+					<td>北京康斯特</td>
+					<td>张三丰</td>
+					<td>13801234567</td>
+					<td>秀丰中路</td>
+					<td>010-12344566</td>
+					<td>周芷若</td>
+					<td>13801234567</td>
+					<td>赵敏</td>
+					<td>13801234567</td>
+					<td>
+						<select name="sfgz" id="sfgz" style="width:100%">
+							<option value="s">是</option>
+							<option value="f" selected="selected">否</option>
+						</select>
+					</td>
+					<td>12</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>北京</td>
+					<td>
+						<select name="gnw" id="gnw" style="width:100%">
+							<option value="gn" selected="selected">国内</option>
+							<option value="gw">国外</option>
+						</select>
+					</td>
+					<td>
+						<select name="sfgz" id="sfgz" style="width:100%">
+							<option value="s">是</option>
+							<option value="f" selected="selected">否</option>
+						</select>
+					</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script>
+		function displayDate(){
+				if($(".table_huizong").is(':hidden')){
+					$(".table_huizong").show();
+				}else{
+					$(".table_huizong").hide();
+				}
+		}
+	</script>
+</body>
+</html>

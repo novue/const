@@ -1,0 +1,188 @@
+@charset "UTF-8"
+@font-face{
+	font-family: "ConST-font";
+	src:url(fonts/Munro.eot), url(fonts/Munro.otf), url(fonts/Munro.svg), url(fonts/Munro.ttf), url(fonts/Munro.woff);
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+img{
+	border: none;
+}
+li{
+	list-style: none;
+}
+h1 h2 h3 h4 h5 h6{
+	font-weight: normal;
+}
+body{
+	font-family: "microsoft yahei";
+	overflow-y: scroll;
+	margin: 0 5px 0 10px;
+}
+/*menu_top start*/
+.menu_top{
+	height: 40px;
+	width: 100%;
+	background: #f9f9f9;
+	border-bottom: 1px #aaa solid;
+}
+.menu_top ul li{
+	float: left;
+}
+.menu_top ul li i{
+	color: #2a67be;
+}
+.menu_top ul li a{
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 40px;
+	color: #2a67be;
+	font-weight: bold;
+}
+.menu_top ul li a:hover{
+	text-decoration: underline;
+}
+.menu_top ul li a span{
+	padding-right: 10px;
+}
+/*menu_top end*/
+
+/*任务 start*/
+.renwu{
+	border-bottom: 1px #2a67be solid;
+}
+.renwupic{
+	float: left;
+	width: 40%;
+	height: 390px;
+}
+.renwupic .pictitle{
+	height: 32px;
+	width: 100%;
+}
+/*饼状区域 start*/
+.renwupic .picarea{
+	height: 390px;
+	width: 100%;
+	position: relative;
+}
+.renwupic .picarea canvas{
+	position: absolute;
+	left: 30%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.renwupic .picarea .circlepic{
+	position: absolute;
+	right: 10%;
+	bottom: 10%;
+}
+.renwupic .picarea .circlepic ul li{
+	font-size: 14px;
+	color: #222;
+	line-height: 20px;
+}
+.renwupic .picarea .circlepic ul li span{
+	margin-right: 10px;
+}
+.daibanpic{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: #198ae8;
+	border: 1px #222 solid;
+}
+.chulipic{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: #ff0000;
+	border: 1px #222 solid;
+}
+.yibanpic{
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	background: #00ff00;
+	border: 1px #222 solid;
+}
+/*饼状区域 end*/
+
+/*tab 选项卡 start*/
+.renwulist{
+	float: right;
+	width: 60%;
+}
+.renwulist .dblist{
+	width: 100%;
+}
+.renwulist .daiban{
+	background:#2a67be;
+	color:#fff;
+}
+.renwulist ul li.left{
+	height: 32px;
+	float: left;
+}
+.renwulist ul li a{
+	display: block;
+	padding: 0 10px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #222;
+}
+/*tab 选项卡 end*/
+.message{
+	width: 100%;
+	padding-bottom: 10px;
+}
+.message ul li.left{
+	height: 32px;
+	float: left;
+}
+.message ul li a{
+	display: block;
+	padding: 0 10px;
+	font-size: 14px;
+	line-height: 32px;
+	color: #222;
+}
+.message .tongzhi{
+	background:#2a67be;
+	color:#fff;
+}
+
+/*更多选项卡*/
+#more{
+	float: right;
+	padding-right: 10px;
+}
+#more a{
+	font-size: 12px;
+	color: #333;
+}
+#more a:hover{
+	color: #198ae8;
+}
+table tbody tr td a{
+	color: #222;
+}
+
+.clear{
+	clear: both;
+}
+
+/*品字布局*/
+#tongbao_t{
+	float: left;
+	width: 49.5%;
+}
+#neibu_t{
+	float: right;
+	width: 49.5%;
+}

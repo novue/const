@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>康斯特产品售后发货单</title>
+	<link rel="stylesheet" href="css/ConST_biaodan.css">
+<!-- 引入The Icon -->
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 引入javascript -->
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<!-- 引入easyui -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/default.css">
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+</head>
+<body>
+<!-- menu_top -->
+	<!-- <div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb.html">康斯特CRM</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="ConST_lb_shouhoufahuo.html">售后发货单</a></li>
+		</ul>
+	</div> -->
+
+<!-- content_table -->
+	<div class="content_table">
+		
+		<div class="tabforyou">
+			<div class="tab_left">
+				<ul>
+					<li><a href="#"><i class="fa fa-file-text"></i>预览</a></li>
+					<li><a href="#"><i class="fa fa-copy"></i>复制</a></li>
+					<li><a href="#"><i class="fa fa-save"></i>保存</a></li>
+					<li><a href="#"><i class="fa fa-user"></i>提交</a></li>
+				</ul>
+			</div>
+			<div class="tab_right">
+				<ul>
+					<li><a href="#"><i class="fa fa-file"></i>生成短信内容</a></li>
+					<li><a href="#"><i class="fa fa-send"></i>发送短信</a></li>
+				</ul>
+			</div>
+		</div>
+
+<!-- main_table -->
+		<div id="main_table">
+			<h3>康斯特产品售后发货单</h3>
+			<div class="biaotou">
+				<label for="bddh">表单单号：</label><input class="easyui-textbox" id="bddh" name="bddh" data-options="required:false" style="width: 200px;">
+			</div>
+			<form action="" method="post">
+				<table style="border-collapse: collapse;" border="1" cellpadding="10" cellspacing="0" width="100%">
+					<tr>
+						<td>客户</td>
+						<td colspan="3">
+							<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 80%">
+							<a href="javascript:void(0)" class="easyui-linkbutton" title="清除选择" onclick="clearForm()"><i class="fa fa-trash"></i></a>
+							<a href="#" title="查看历史信息">历史记录</a>
+						</td>
+						<td>用户名称</td>
+						<td colspan="3"><input class="easyui-textbox" name="yhmc" data-options="required:false" style="width: 85%;">
+							<a href="#" title="查看历史信息">历史记录</a>
+						</td>
+					</tr>
+					<tr>
+						<td>地址</td>
+						<td colspan="3"><input class="easyui-textbox" name="dz" data-options="required:false" style="width: 99%;"></td>
+						<td>邮编</td>
+						<td><input class="easyui-textbox" name="yb" data-options="required:false" style="width: 99%;"></td>
+						<td>区域</td>
+						<td><input class="easyui-textbox" name="qy" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td style="width: 8%">客户类型</td>
+						<td style="width: 17%">
+							<select class="easyui-combobox" name="khlx" style="width: 99%;">
+								<option value="qxz">请选择</option>
+								<option value="gn">国内</option>
+								<option value="gw">国外</option>
+							</select>
+						</td>
+						<td style="width: 8%">联系人</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="lxr" data-options="required:false" style="width: 99%;"></td>
+						<td style="width: 8%">联系人电话</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="lxrdh" data-options="required:false" style="width: 99%;"></td>
+						<td style="width: 8%">联系人传真</td>
+						<td style="width: 17%"><input class="easyui-textbox" name="lxrcz" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>联系人邮箱</td>
+						<td><input class="easyui-textbox" name="lxryx" data-options="required:false" style="width: 99%;"></td>
+						<td>联系人QQ</td>
+						<td><input class="easyui-textbox" name="lxrqq" data-options="required:false" style="width: 99%;"></td>
+						<td>使用人</td>
+						<td><input class="easyui-textbox" name="syr" data-options="required:false" style="width: 99%;"></td>
+						<td>使用人电话</td>
+						<td><input class="easyui-textbox" name="syrdh" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td >销售人员</td>
+						<td>
+						<input class="easyui-textbox comboInput" id="itemNo" name="itemNo" data-options="buttonIcon:'icon-find',
+							onClickButton:function(){getBudget()}" style="width: 99%">
+						</td>
+						<td>销售人员电话</td>
+						<td><input class="easyui-textbox" name="ysrydh" data-options="required:false" style="width: 99%;"></td>
+						<td>入库人</td>
+						<td><input class="easyui-textbox" name="rkr" data-options="required:false" style="width: 99%;"></td>
+						<td>到收快递费用</td>
+						<td><input class="easyui-textbox" name="dskdfy" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>返修日期</td>
+						<td><input class="easyui-datebox textbox" name="fxrq" data-options="required:false" style="width: 99%;"></td>
+						<td>预计完成日期</td>
+						<td><input class="easyui-datebox textbox" name="yjwcrq" data-options="required:false" style="width: 99%;"></td>
+						<td>收货人</td>
+						<td><input class="easyui-textbox" name="shr" data-options="required:false" style="width: 99%;"></td>
+						<td>收货人电话</td>
+						<td><input class="easyui-textbox" name="shrdh" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>收货地址</td>
+						<td colspan="3"><input class="easyui-textbox" name="shdz" data-options="required:false" style="width: 99%;"></td>
+						<td colspan="2">本次维修完数量/未发货总数量</td>
+						<td colspan="2"><input class="easyui-textbox" name="wxfhsl" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>国外维修单号</td>
+						<td colspan="7"><input class="easyui-textbox" name="gwwxdh" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+					<tr>
+						<td>备注</td>
+						<td colspan="7"><input class="easyui-textbox" name="bz" data-options="required:false" style="width: 99%;"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+<!-- 上传附件 -->
+		<div id="message_area">
+			<h3><i class="fa fa-table"></i>附件信息<span class="span">（单个附件小于4M）</span></h3>
+			<div class="fix_file">
+				<label for="file_2" title="选择上传文件">上传CNAS委托单:</label><input tabindex="2" size="3" name="report" id="file_1" type="file">
+			</div>
+			<div class="fix_file">
+				<label for="file_2" title="选择上传文件">上传送检委托单:</label><input tabindex="2" size="3" name="report" id="file_2" type="file" onchange="document.getElementById('xFile').value=this.value">
+			</div>
+ 		</div>
+	</div>
+
+</body>
+</html>

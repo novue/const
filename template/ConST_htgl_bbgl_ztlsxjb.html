@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>状态流水细节</title>
+	<link rel="stylesheet" href="css/ConST_lb.css" type="text/css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<script src="js/jquery-1.11.1.min.js" type="text/javascript"></script>
+	<!-- 引入easyui css -->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/easyui.css">
+	
+</head>
+<body>
+	<div class="menu_top">
+		<ul>
+			<li><i class="fa fa-home"></i><a href="ConST_index.html">ConST</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#">合同管理</a></li>
+			<li><i class="fa fa-angle-right"></i><a href="#">报表管理</a></li>
+		</ul>
+	</div>
+	<!-- <div class="tabforyou">
+		<ul>
+			<li><a href="#" onclick="$('#dlg').dialog('open')"><i class="fa fa-plus"></i>添加</a></li>
+			<li><a href="#" onclick="$('#dlf').dialog('open')"><i class="fa fa-pencil"></i>修改</a></li>
+			<li><a href="#"><i class="fa fa-times"></i>删除</a></li>
+			<li><a href="#" onclick="$('#ch').dialog('open')"><i class="fa fa-search"></i>查询</a></li>
+		</ul>
+	</div> -->
+	<div id="content_table">
+		<table id="dg" class="easyui-datagrid" title="" toolbar="#tb" style="width:100%;min-width: 870px;" data-options="rownumbers:true,pagination:true,url:'datagrid_data1.json',method:'get'">
+			<thead>
+				<tr>
+					<th field="状态" width="63%" align="left">状态</th>
+					<th field="处理人" width="12%" align="left">处理人</th>
+					<th field="流入时间" width="12%" align="center">流入时间</th>
+					<th field="处理时间" width="12%" align="center">处理时间</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><a href="ConST_lb_shoufei.html">维修收费</a></td>
+					<td>刘鹏程</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_jiliang.html">维修计量</td>
+					<td>付永才</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_weixiu.html">维修</a></td>
+					<td>吕绍现</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_jianyan.html">维修检验</a></td>
+					<td>高陆</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_shoufei.html">维修收费</a></td>
+					<td>刘鹏程</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_jiliang.html">维修计量</td>
+					<td>付永才</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_weixiu.html">维修</a></td>
+					<td>吕绍现</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_jianyan.html">维修检验</a></td>
+					<td>高陆</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_shoufei.html">维修收费</a></td>
+					<td>刘鹏程</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_jiliang.html">维修计量</td>
+					<td>付永才</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_weixiu.html">维修</a></td>
+					<td>吕绍现</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+				<tr>
+					<td><a href="ConST_lb_jianyan.html">维修检验</a></td>
+					<td>高陆</td>
+					<td>2016-06-06 12-41-00</td>
+					<td>2016-06-07 15-41-00</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+
+
+<!-- 引入easyui js -->
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script> 
+	<!-- 汉化 -->
+	<script type="text/javascript" src="easyui/easyui-lang-zh_CN.js"></script> 
+
+</body>
+</html>

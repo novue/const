@@ -1,0 +1,172 @@
+@charset "UTF-8"
+@font-face{
+	font-family: "ConST-font";
+	src:url（fonts/Munro.woff）,url（fonts/Munro.svg),url（fonts/Munro.eot),url（fonts/Munro.otf),url（fonts/Munro.ttf);
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+}
+img{
+	border: none;
+}
+body{
+	font-family: "microsoft yahei";
+	/*overflow-y: scroll;*/
+	margin: 0 10px 0 10px;
+}
+h1 h2 h3 h4 h5 h6{
+	font-weight: normal;
+}
+.clear{
+	clear: both;
+}
+#tt{
+	font-size: 14px;
+}
+body{
+	font-family: "microsoft yahei";
+	margin: 0 10px 0 10px;
+	color: #222;
+}
+/*menu_top start*/
+.menu_top{
+	height: 36px;
+	width: 100%;
+	background: #f9f9f9;
+}
+.menu_top ul li{
+	float: left;
+}
+.menu_top ul li i{
+	color: #2a67be;
+}
+.menu_top ul li a{
+	padding-left: 10px;
+	font-size: 14px;
+	line-height: 36px;
+	color: #2a67be;
+	font-weight: bold;
+}
+.menu_top ul li a:hover{
+	text-decoration: underline;
+}
+.menu_top ul li a span{
+	padding-right: 10px;
+}
+/*menu_top end*/
+
+/*满意度调查*/
+#table_manyidu{
+	border: 1px solid #95b8e7;
+}
+#table_manyidu table{
+	width: 100%;
+}
+#table_manyidu table tr th{
+	font-size: 14px;
+	text-align: right;
+	font-weight: normal;
+}
+#table_manyidu table tr td{
+	font-size: 14px;
+}
+#table_manyidu table tr td input{
+	color: #2a67be;
+}
+
+/*汇总表格*/
+.table_huizong {
+	margin: 0 auto;
+	width: 70%;
+	display: none;
+}
+.table_huizong table{
+	border: 1px solid #95b8e7;
+	text-align: center;
+	width: 100%;
+}
+.table_huizong caption{
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 32px;
+}
+.table_huizong table tr:nth-child(1){
+	background: #f8f8f8;
+}
+.table_huizong table tr:nth-child(1) input{
+	background: #f8f8f8;
+}
+.table_huizong table tr:nth-child(2){
+	background: #f8f8f8;
+}
+.table_huizong tr td{
+	font-size: 14px;
+	height: 30px;
+	border: 1px solid #95b8e7;
+}
+.table_huizong tr td input{
+	height: 100%;
+	width: 100%;
+	outline: none;
+	border: 0;
+	font-size: 14px;
+	color: #2a67be;
+}
+.table_huizong tr:hover{
+	background: #eef6fe;
+}
+.table_huizong p{
+	text-align: right;
+	font-size: 14px;
+	color: #222;
+	line-height: 32px;
+}
+
+/*返修查询*/
+.table_fanxiu {
+	margin: 10px auto;
+	width: 100%;
+}
+.table_fanxiu table tr td{
+	height: 24px;
+}
+
+/*tabforyou start*/
+.tabforyou{
+	overflow: hidden;
+	width: 100%;
+}
+.tabforyou ul{
+	float: right;
+}
+.tabforyou ul li{
+	float: left;
+}
+.tabforyou ul li a{
+	font-size: 14px;
+	color: #2a67be;
+	line-height: 28px;
+	padding: 0 10px;
+	border-right: 1px #ccc solid;
+	border-left: 1px #fff solid;
+}
+.tabforyou ul li:first-child a{
+	border-left: none;
+}
+.tabforyou ul li:last-child a{
+	border-right: none;
+}
+.tabforyou ul li a i{
+	padding-right: 5px;
+}
+.tabforyou ul li a:hover{
+	text-decoration: underline;
+}
+/*tabforyou end*/
